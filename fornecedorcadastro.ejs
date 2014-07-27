@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport"     content="width=device-width, initial-scale=1.0">
+        <meta name="description"  content="Área principal de sistema provider, com aprresentação do dashboard.">
+        <meta name="keywords"     content="ichose, provider, baladas, eventos, festas, shows, comanda, digital, danceteria, software, balcão"/>
+        <meta name="author"       content="Fabio Lenine, Jadson Mezzari, Jesualdo Pinheiro and Lucas Assis."/>
+    
+        <title>Fornecedor - iChose</title>
+        
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="https://s3-us-west-2.amazonaws.com/ichose/site/provider/font-awesome/css/font-awesome.min.css">
+        <!-- Add custom CSS here -->
+        <link rel="stylesheet" type="text/css" href="https://s3-us-west-2.amazonaws.com/ichose/site/provider/css/ichose.css">
+        <!-- Page Specific CSS -->
+        <link rel="stylesheet" type="text/css" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
+    </head>
+    <body>
+        <div id="fullscreen_bg" class="fullscreen_bg"></div>
+        <div id="wrapper">
+
+      <!-- Sidebar -->
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="dashboard.html">iChose Management</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav side-nav">
+           <li class="dropdown">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> Dashboard <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="/mapa">...</a></li>
+                  <li><a href="/ichose">...</a></li>
+                  <li><a href="/interno">...</a></li>
+                  <li><a href="/cadEvento">...</a></li>
+                </ul>
+            </li>
+
+           <li class="dropdown">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-home"></i> Fornecedor <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="/fornecedorcadastro">        <i class="glyphicon glyphicon-pencil"></i> Cadastro</a>     </li>
+                  <li><a href="/fornecedorevento">          <i class="fa fa-beer">                </i> Evento</a>       </li>
+                  <li><a href="/fornecedorusuario">         <i class="glyphicon glyphicon-user">  </i> Usuário</a>      </li>
+                  <li><a href="/fornecedorconfiguracao">    <i class="glyphicon glyphicon-cog">   </i> Configuração</a> </li>
+                </ul>
+            </li>
+              
+            <li><a href="/grafico"><i class="fa fa-bar-chart-o"></i> ...</a></li>
+            <li><a href="/relatorio"><i class="fa fa-table"></i> ...</a></li>
+            <li><a href="/evento"><i class="fa fa-edit"></i> ...</a></li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right navbar-user">
+            <li class="dropdown user-dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <%= user.local.email %> <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/perfil"><i class="fa fa-user"></i> Perfil</a></li>
+                <li><a href="/configuracao"><i class="fa fa-gear"></i> Configurações</a></li>
+                <li class="divider"></li>
+                <li><a href="/logout"><i class="fa fa-power-off"></i> Sair</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+
+      <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <ol class="breadcrumb" id="glass">
+                    <li class="active"><i class="fa fa-tags"></i> Produtos e Serviços</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                <!-- Default panel contents -->
+                    <div class="panel-heading">Fornecedor</div>
+                    <div class="panel-body">
+                        <div class="input-group">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                    Descrição <span class="caret"></span></button>
+                                <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                                  <li><a href="#">Código</a></li>
+                                  <li><a href="#">Categória</a></li>
+                                  <li class="divider"></li>
+                                  <li><a href="#">Cadastrado por</a></li>
+                                </ul>
+                                <button class="btn btn-success" type="button" data-toggle="modal" data-target="#myModal">
+                                    <span class="glyphicon glyphicon-plus"></span>
+                                    Novo</button>
+                            </div><!-- /btn-group -->
+                            <input type="text" class="form-control">
+                        </div><!-- /input-group -->
+                    </div>
+                    <div class="table-responsive"> 
+                        <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Descrição</th>
+                                <th>Quant.</th>
+                                <th>Valor</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>descricao</td>
+                                <td>quantidade</td>
+                                <td>valor</td>
+                                <td>total</td>
+                            </tr>
+                            <tr>
+                                <td>descricao</td>
+                                <td>quantidade</td>
+                                <td>valor</td>
+                                <td>total</td>
+                            </tr>
+                            <tr>
+                                <td>descricao</td>
+                                <td>quantidade</td>
+                                <td>valor</td>
+                                <td>total</td>
+                            </tr>
+                           <tr>
+                                <td>descricao</td>
+                                <td>quantidade</td>
+                                <td>valor</td>
+                                <td>total</td>
+                            </tr>
+                           <tr>
+                                <td>descricao</td>
+                                <td>quantidade</td>
+                                <td>valor}}</td>
+                                <td>total</td>
+                            </tr>
+                           <tr>
+                                <td>descricao</td>
+                                <td>quantidade</td>
+                                <td>valor</td>
+                                <td>total</td>
+                            </tr>
+                            <tr>
+                                <td>descricao</td>
+                                <td>quantidade</td>
+                                <td>valor</td>
+                                <td>total</td>
+                            </tr>
+                            <tr>
+                                <td>descricao</td>
+                                <td>quantidade</td>
+                                <td>valor</td>
+                                <td>total</td>
+                            </tr>
+                            <tr>
+                                <td>descricao</td>
+                                <td>quantidade</td>
+                                <td>valor</td>
+                                <td>total</td>
+                            </tr>
+                           <tr>
+                                <td>descricao</td>
+                                <td>quantidade</td>
+                                <td>valor</td>
+                                <td>total</td>
+                            </tr>
+                           <tr>
+                                <td>descricao</td>
+                                <td>quantidade</td>
+                                <td>valor}}</td>
+                                <td>total</td>
+                            </tr>
+                           <tr>
+                                <td>descricao</td>
+                                <td>quantidade</td>
+                                <td>valor</td>
+                                <td>total</td>
+                            </tr>
+                            <tr>
+                                <td>descricao</td>
+                                <td>quantidade</td>
+                                <td>valor</td>
+                                <td>total</td>
+                            </tr>
+                            <tr>
+                                <td>descricao</td>
+                                <td>quantidade</td>
+                                <td>valor</td>
+                                <td>total</td>
+                            </tr>
+                           <tr>
+                                <td>descricao</td>
+                                <td>quantidade</td>
+                                <td>valor</td>
+                                <td>total</td>
+                            </tr>
+                           <tr>
+                                <td>descricao</td>
+                                <td>quantidade</td>
+                                <td>valor}}</td>
+                                <td>total</td>
+                            </tr>
+                           <tr>
+                                <td>descricao</td>
+                                <td>quantidade</td>
+                                <td>valor</td>
+                                <td>total</td>
+                            </tr>
+                        </tbody>
+                        </table>
+                    </div>
+               </div> 
+            </div>
+            </div>
+        </div><!-- /#page-wrapper -->
+    </div><!-- /#wrapper -->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Produtos e Serviços</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-success">Salvar</button>
+      </div>
+    </div>
+  </div>
+</div>  
+        
+    <!-- 	Bootstrap core JavaScript =========================	-->
+  	<!-- 	Placed at the end of the document so the pages load faster 	-->
+		<script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.2/angular.min.js"></script>
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    
+    
+
+    <!-- Page Specific Plugins -->
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+        <script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
+        <script src="https://s3-us-west-2.amazonaws.com/ichose/site/provider/js/morris/chart-data-morris.js"></script>
+        <script src="https://s3-us-west-2.amazonaws.com/ichose/site/provider/js/tablesorter/jquery.tablesorter.js"></script>
+        <script src="https://s3-us-west-2.amazonaws.com/ichose/site/provider/js/tablesorter/tables.js"></script>
+
+  </body>
+</html>
