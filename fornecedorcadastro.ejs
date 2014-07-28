@@ -240,30 +240,51 @@
         <h4 class="modal-title" id="myModalLabel">Fornecedor</h4>
       </div>
       <div class="modal-body">
-            <label for="razao-social">Razão Social</label> 
-            <div class="input-group col-xs-18 col-md-12" autofocus>  
-                <input type="text" class="form-control" placeholder="digite a razão social da empresa conforme documento" autofocus>
-            </div>
-            <br>
-            <label for="nome-fantasia">Nome de Fantasia</label>
-            <div class="input-group col-xs-18 col-md-12">
-                <input type="text" class="form-control" placeholder="digite o nome de fantasia da empresa conforme documento">
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-md-6">
-                <label for="nome-fantasia">CNPJ</label>
+          
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="active">   <a href="#principal"    role="tab" data-toggle="tab">Principal</a></li>
+          <li>                  <a href="#endereco"     role="tab" data-toggle="tab">Endereço</a></li>
+          <li>                  <a href="#contato"      role="tab" data-toggle="tab">Contato</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div class="tab-pane active"  id="principal">
+                <label for="razao-social">Razão Social</label> 
+                <div class="input-group col-xs-18 col-md-12" autofocus>  
+                    <input type="text" class="form-control" placeholder="digite a razão social da empresa conforme documento" autofocus>
+                </div>
+                <br>
+                <label for="nome-fantasia">Nome de Fantasia</label>
                 <div class="input-group col-xs-18 col-md-12">
+                    <input type="text" class="form-control" placeholder="digite o nome de fantasia da empresa conforme documento">
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-6">
+                    <label for="cnpj">CNPJ</label>
+                    <div class="input-group col-xs-18 col-md-12">
+                        <input type="text" class="form-control" placeholder="digite o número do CNPJ">
+                    </div>
+                    </div>
+                    <div class="col-md-6">
+                    <label for="inscricao-estadual">Inscrição Estadual</label>
+                    <div class="input-group col-xs-18 col-md-12">
+                        <input type="text" class="form-control" placeholder="digite o número da inscrição estadual">
+                    </div>
+                    </div>
+                </div>
+                <br>
+                <label for="inscricao-municipal">Inscrição Municipal</label>
+                <div class="input-group col-xs-9 col-md-6">
                     <input type="text" class="form-control" placeholder="digite o número do CNPJ">
                 </div>
-                </div>
-                <div class="col-md-6">
-                <label for="nome-fantasia">Inscrição Estadual</label>
-                <div class="input-group col-xs-18 col-md-12">
-                    <input type="text" class="form-control" placeholder="digite o número da inscrição estadual">
-                </div>
-                </div>
             </div>
+          <div class="tab-pane"         id="endereco">...</div>
+          <div class="tab-pane"         id="contato">...</div>
+        </div>          
+          
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-warning" data-dismiss="modal">Fechar</button>
