@@ -286,15 +286,6 @@
                 <div class="input-group col-xs-9 col-md-6">
                     <input type="text" class="form-control" placeholder="digite a inscrição municipal">
                 </div>
-            <!--
-            Nome;
-            Sobrenome;
-            Telefone;
-            Setor;
-            Funcionários;
-            Cargo;
-            WebSite
-            -->
             </div>
           <div class="tab-pane"         id="endereco">
               <br> 
@@ -352,7 +343,48 @@
                 <div id="map_canvas"></div>
               </div>
           </div>
-          <div class="tab-pane"         id="contato">...</div>
+          <div class="tab-pane"         id="contato">
+              <br> 
+              <label for="nome-contato">Nome de contato</label> 
+              <div class="input-group col-xs-18 col-md-12" autofocus>  
+                  <input type="text" class="form-control" placeholder="nome do gerente, funcionário ou encerregado..." autofocus>
+              </div>
+              <br> 
+              <div class="row">
+                    <div class="col-md-6">
+                        <label for="cargo">Cargo</label> 
+                        <div class="input-group col-xs-18 col-md-12">  
+                            <input type="text" class="form-control" placeholder="...">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="setor">Setor</label> 
+                        <div class="input-group col-xs-18 col-md-12">  
+                            <input type="text" class="form-control" placeholder="...">
+                        </div>
+                    </div>
+              </div>
+              <br> 
+              <div class="row">
+                    <div class="col-md-6">
+                        <label for="email">E-mail</label> 
+                        <div class="input-group col-xs-18 col-md-12">  
+                            <input type="text" class="form-control" placeholder="...">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="telefone">Telefone</label> 
+                        <div class="input-group col-xs-18 col-md-12">  
+                            <input type="text" class="form-control" placeholder="(000) 00000-0000">
+                        </div>
+                    </div>
+              </div>
+              <br> 
+              <label for="webite">Website</label> 
+              <div class="input-group col-xs-18 col-md-12" autofocus>  
+                  <input type="text" class="form-control" placeholder="wwww..." autofocus>
+              </div>
+          </div>
         </div>          
           
       </div>
@@ -377,7 +409,7 @@
         <script src="https://s3-us-west-2.amazonaws.com/ichose/site/provider/js/tablesorter/jquery.tablesorter.js"> </script>
         <script src="https://s3-us-west-2.amazonaws.com/ichose/site/provider/js/tablesorter/tables.js">             </script>
     <!-- Google Maps API Key e Sensor-->
-        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyB3g1x-yuUasJMAZ96tyi18_IUq99h_wRc&sensor=false">                                                                           </script>
+        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyB3g1x-yuUasJMAZ96tyi18_IUq99h_wRc&sensor=true" type="text/javascript">                                                                                             </script>
         <script src="https://s3-us-west-2.amazonaws.com/ichose/site/management/js/googlemaps.js">                   </script>
   </body>
 </html>
