@@ -262,12 +262,9 @@
                     <input type="text" class="form-control" placeholder="digite o nome de fantasia da empresa conforme documento">
                 </div>
                 <br>
-                <div class="row">
-                    
-                    <label for="nome-responsavel">Nome do Responsável</label>
-                    <div class="input-group col-xs-18 col-md-12">
-                        <input type="text" class="form-control" placeholder="proprierário, sócio, diretor, gerente...">
-                    </div>
+                <label for="nome-responsavel">Nome do Responsável</label>
+                <div class="input-group col-xs-18 col-md-12">
+                    <input type="text" class="form-control" placeholder="proprierário, sócio, diretor, gerente...">
                 </div>
                 <br>
                 <div class="row">
@@ -303,6 +300,17 @@
             -->
             </div>
           <div class="tab-pane"         id="endereco">
+              <br> 
+              <label for="logradouro">Logradouro</label> 
+              <div class="input-group col-xs-18 col-md-12" autofocus>  
+                  <input type="text" class="form-control" placeholder="Rua, Avenida, Servidão ..." autofocus>
+              </div>
+              <br>
+              <label for="bairro">Bairro</label> 
+              <div class="input-group col-xs-18 col-md-12" autofocus>  
+                  <input type="text" class="form-control" placeholder="..." autofocus>
+              </div>
+              <br>
               <div class="row">
                 <div id="map_canvas"></div>
               </div>
@@ -332,7 +340,7 @@
         <script src="https://s3-us-west-2.amazonaws.com/ichose/site/provider/js/tablesorter/jquery.tablesorter.js"> </script>
         <script src="https://s3-us-west-2.amazonaws.com/ichose/site/provider/js/tablesorter/tables.js">             </script>
     <!-- Google Maps API Key e Sensor-->
-        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyB3g1x-yuUasJMAZ96tyi18_IUq99h_wRc&sensor=TRUE">                                                                           </script>
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyB3g1x-yuUasJMAZ96tyi18_IUq99h_wRc&sensor=false">                                                                           </script>
         <script src="https://s3-us-west-2.amazonaws.com/ichose/site/management/js/googlemaps.js">                   </script>
   </body>
 </html>
