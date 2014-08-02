@@ -1,4 +1,4 @@
-var myCenter=new google.maps.LatLng(53, -1.33);
+var myCenter=new google.maps.LatLng(-34.397, 150.644);
 var marker=new google.maps.Marker({
     position:myCenter
 });
@@ -28,12 +28,3 @@ $('.btnmap').click(function(){
   	initialize();
 
 });
-
-function loadScript() {
-  var script = document.createElement("script");
-  script.type   = "text/javascript";
-  script.src    = "http://maps.googleapis.com/maps/api/js?key=AIzaSyB3g1x-yuUasJMAZ96tyi18_IUq99h_wRc&sensor=TRUE";
-  document.body.appendChild(script);
-}
-
-window.onload = loadScript;
