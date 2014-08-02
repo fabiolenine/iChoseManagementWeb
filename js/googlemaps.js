@@ -12,7 +12,7 @@ function initialize() {
       mapTypeId:google.maps.MapTypeId.SATELLITE
   };
   
-  var map=new google.maps.Map(document.getElementById("map-canvas"),mapProp);
+  var map=new google.maps.Map(document.getElementById("map_canvas"),mapProp);
   marker.setMap(map);
     
   google.maps.event.addListener(marker, 'click', function() {
@@ -24,7 +24,5 @@ function initialize() {
 };
 
 $('.btnmap').click(function(){
-
   	initialize();
-
 });
