@@ -294,8 +294,6 @@
             Funcionários;
             Cargo;
             WebSite
-            País
-            Estado
             Caixa Postal
             -->
             </div>
@@ -303,14 +301,52 @@
               <br> 
               <label for="logradouro">Logradouro</label> 
               <div class="input-group col-xs-18 col-md-12" autofocus>  
-                  <input type="text" class="form-control" placeholder="Rua, Avenida, Servidão ..." autofocus>
+                  <input type="text" class="form-control" placeholder="rua, avenida, servidão ..." autofocus>
               </div>
               <br>
-              <label for="bairro">Bairro</label> 
-              <div class="input-group col-xs-18 col-md-12" autofocus>  
-                  <input type="text" class="form-control" placeholder="..." autofocus>
+              <div class="row">
+                    <div class="col-md-6">
+                        <label for="complemento">complemento</label> 
+                        <div class="input-group col-xs-18 col-md-12" autofocus>  
+                            <input type="text" class="form-control" placeholder="..." autofocus>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="bairro">Bairro</label> 
+                        <div class="input-group col-xs-18 col-md-12" autofocus>  
+                            <input type="text" class="form-control" placeholder="..." autofocus>
+                        </div>
+                    </div>
               </div>
-              <br>
+              <div class="row">
+                    <div class="col-md-6">
+                        <label for="cidade">Cidade</label> 
+                        <div class="input-group col-xs-18 col-md-12" autofocus>  
+                            <input type="text" class="form-control" placeholder="cidade" autofocus>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="estado">Estado</label> 
+                        <div class="input-group col-xs-18 col-md-12" autofocus>  
+                            <input type="text" class="form-control" placeholder="Estado" autofocus>
+                        </div>
+                    </div>
+              </div>
+              <div class="row">
+                    <div class="col-md-6">
+                        <label for="cep">CEP</label> 
+                        <div class="input-group col-xs-18 col-md-12" autofocus>  
+                            <input type="text" class="form-control" placeholder="_____-___" autofocus>
+                        </div>
+                    </div>  
+                    <div class="col-md-6">
+                        <label for="caixa-postal">Caixa Postal</label> 
+                        <div class="input-group col-xs-18 col-md-12" autofocus>  
+                             <input type="text" class="form-control" placeholder="..." autofocus>
+                        </div>
+                    </div>
+              </div>
+              <br>    
               <div class="row">
                 <div id="map_canvas"></div>
               </div>
