@@ -4,12 +4,40 @@ function providerCTRL($scope, $window, $http){
     
     $scope.salvar = function()
     {
-        //Adicionar aqui a chamada ao serviço.
+        //Adicionar aqui a chamada post ao serviço.
+        //if($scope.fornecedor.id > 0 ){
+        //    $http.put('/blabla/fornecedor', $scope.fornecedor).success(function(data){
+        //        
+        //    });
+        //}
+        //else
+        //{
+        //  $http.post('/blabla/fornecedor', $scope.fornecedor).success(function(data){
+        //      $scope.lista.unshift(data);
+        //
+        //  });
         $scope.lista.unshift($scope.fornecedor);
+        
+        reset();
+        //}
     }
     
-    var init = function()
-    {
+    $scope.editar = function(unidade){
+        $scope.fornecedor = unidade;
+    };
+    
+    $scope.excluir = function(unidade){
+        var confirm = $window.confirm('Tem certeza que deseja excluir ' + unidade.nomefantasia + '?');
+        
+        if(confirm){
+            //acrescentar aqui um post de alteração do forauso.
+            var index = $scope.lista.indexOf(unidade);
+            $scope.lista.splice(index,1);
+            // fecha o $http do post aqui --> });
+        }
+    };
+    
+    var reset = function(){
         $scope.fornecedor = {razaosocial        : ''
                             ,nomefantasia       : ''
                             ,nomeresponsavel    : ''
@@ -31,8 +59,18 @@ function providerCTRL($scope, $window, $http){
                             ,website            : ''
                             ,situacao           : ''
                             ,forauso            : false 
-                            ,id                 : 0};
+                            ,id                 : 0};        
+    };
+    
+    var init = function()
+    {   
+        //realizar uma get aqui para formar a lista, exemplo:
+        // $http.get('/blabla/fornecedor').success(function(data){
+        //      $scope.lista = data;
+        // });
         $scope.lista = [];
+        
+        reset();
     };
 
     init();

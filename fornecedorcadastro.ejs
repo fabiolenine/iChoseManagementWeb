@@ -126,7 +126,7 @@
                                 <td>{{un.cidade}}</td>
                                 <td>{{un.estado}}</td>
                                 <td>{{un.situacao}}</td>
-                                <td>[ editar | excluir ]</td>
+                                <td><a href="#" ng-click="editar(un)" data-toggle="modal" data-target="#myModal">editar</a> | <a href="#" ng-click="excluir(un)">excluir</a></td>
                             </tr>
                         </tbody>
                         </table>
@@ -342,7 +342,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-warning" data-dismiss="modal">Fechar</button>
-        <button type="button" class="btn btn-success" ng-click="salvar()">Salvar</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal" ng-click="salvar()" >Salvar</button>
       </div>
     </div>
   </div>
