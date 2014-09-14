@@ -22,11 +22,11 @@ function providerCTRL($scope, $window, $http){
         }
         else 
         {    
-            $scope.lista.unshift($scope.fornecedor);
+            $scope.lista.unshift(unidade);
         };
         
         reset();
-        //}
+        //} 
     }
     
     $scope.editar = function(unidade){
