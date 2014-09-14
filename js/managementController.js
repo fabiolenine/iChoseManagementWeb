@@ -16,7 +16,14 @@ function providerCTRL($scope, $window, $http){
         //      $scope.lista.unshift(data);
         //
         //  });
-        $scope.lista.unshift($scope.fornecedor);
+        if($scope.fornecedor.id > 0) 
+        {
+            //Aquie colocarei um post para update;
+        }
+        else 
+        {    
+            $scope.lista.unshift($scope.fornecedor);
+        };
         
         reset();
         //}
@@ -57,8 +64,8 @@ function providerCTRL($scope, $window, $http){
                             ,email              : ''
                             ,telefone           : ''
                             ,website            : ''
-                            ,situacao           : ''
-                            ,forauso            : false 
+                            ,situacao           : 'Habilitado'
+                            ,forauso            : false
                             ,id                 : 0};        
     };
     

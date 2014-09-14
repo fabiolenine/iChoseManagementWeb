@@ -126,7 +126,14 @@
                                 <td>{{un.cidade}}</td>
                                 <td>{{un.estado}}</td>
                                 <td>{{un.situacao}}</td>
-                                <td><a href="#" ng-click="editar(un)" data-toggle="modal" data-target="#myModal">editar</a> | <a href="#" ng-click="excluir(un)">excluir</a></td>
+                                <td><a href="#" 
+                                       ng-click="editar(un)" 
+                                       data-toggle="modal" 
+                                       data-target="#myModal">editar
+                                    </a> | 
+                                    <a href="#" 
+                                       ng-click="excluir(un)">excluir
+                                    </a></td>
                             </tr>
                         </tbody>
                         </table>
@@ -208,12 +215,25 @@
                     </div>
                 </div>
                 <br>
-                <label>Inscrição Municipal</label>
-                <div class="input-group col-xs-9 col-md-6">
+                <div class="row">
+                    <div class="col-md-6">
+                    <label>Inscrição Municipal</label>
+                    <div class="input-group col-xs-18 col-md-12">
                     <input type             ="text" 
                            class            ="form-control"
                            ng-model         ="fornecedor.inscricaomunicipal"
                            placeholder      ="digite a inscrição municipal">
+                    </div>
+                    </div>
+                    <div class="col-md-6">
+                    <label>Situação</label>
+                    <div class="input-group col-xs-18 col-md-12">
+                    <input type             ="text" 
+                           class            ="form-control"
+                           ng-model         ="fornecedor.situacao"
+                           placeholder      ="digite a inscrição municipal">
+                    </div>
+                    </div>
                 </div>
             </div>
           <div class="tab-pane"         id="endereco">
@@ -298,20 +318,30 @@
               <br> 
               <label>Nome de contato</label> 
               <div class="input-group col-xs-18 col-md-12" autofocus>  
-                  <input type="text" class="form-control" placeholder="nome do gerente, funcionário ou encarregado..." autofocus>
+                  <input type        ="text" 
+                         class       ="form-control"
+                         ng-model    ="fornecedor.nomecontato"
+                         placeholder ="nome do gerente, funcionário ou encarregado..." 
+                         autofocus>
               </div>
               <br> 
               <div class="row">
                     <div class="col-md-6">
                         <label>Cargo</label> 
                         <div class="input-group col-xs-18 col-md-12">  
-                            <input type="text" class="form-control" placeholder="...">
+                            <input type         ="text" 
+                                   class        ="form-control" 
+                                   ng-model     ="fornecedor.cargo"
+                                   placeholder  ="...">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <label>Setor</label> 
                         <div class="input-group col-xs-18 col-md-12">  
-                            <input type="text" class="form-control" placeholder="...">
+                            <input type         ="text" 
+                                   class        ="form-control" 
+                                   ng-model     ="fornecedor.setor"
+                                   placeholder  ="...">
                         </div>
                     </div>
               </div>
@@ -320,20 +350,29 @@
                     <div class="col-md-6">
                         <label>E-mail</label> 
                         <div class="input-group col-xs-18 col-md-12">  
-                            <input type="email" class="form-control" placeholder="...">
+                            <input type         ="email" 
+                                   class        ="form-control" 
+                                   ng-model     ="fornecedor.email"
+                                   placeholder  ="...">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <label>Telefone</label> 
                         <div class="input-group col-xs-18 col-md-12">  
-                            <input type="text" class="form-control" placeholder="(000) 00000-0000">
+                            <input type         ="text" 
+                                   class        ="form-control" 
+                                   ng-model     ="fornecedor.telefone"
+                                   placeholder  ="(000) 00000-0000">
                         </div>
                     </div>
               </div>
               <br> 
               <label>Website</label> 
               <div class="input-group col-xs-18 col-md-12">  
-                  <input type="text" class="form-control" placeholder="www...">
+                  <input type        ="text" 
+                         class       ="form-control" 
+                         ng-model    ="fornecedor.website"
+                         placeholder ="www...">
               </div>
           </div>
         </div>          
