@@ -18,15 +18,19 @@ function providerCTRL($scope, $window, $http){
         //  });
         if($scope.fornecedor.id > 0) 
         {
-            //Aquie colocarei um post para update;
+            //Aqui colocarei um post para update;
         }
         else 
         {    
-            $scope.lista.unshift(unidade);
+            //Aqui colocarei um post para inserir e retornar o ID
+            $scope.lista.unshift($scope.fornecedor);
         };
         
+        $window.console.log($scope.fornecedor);
+        $window.console.log($scope.fornecedor.id);
+        
         reset();
-        //} 
+        //}
     }
     
     $scope.editar = function(unidade){
