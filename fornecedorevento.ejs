@@ -7,7 +7,7 @@
         <meta name="keywords"     content="ichose, provider, baladas, eventos, festas, shows, comanda, digital, danceteria, software, balcão"/>
         <meta name="author"       content="Fabio Lenine, Jadson Mezzari, Jesualdo Pinheiro and Lucas Assis."/>
     
-        <title>Fornecedor - iChose</title>
+        <title>Fornecedor - Eventos - iChose</title>
         
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
@@ -82,7 +82,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <ol class="breadcrumb" id="glass">
-                    <li class="active"><i class="fa fa-home"></i> Fornecedor</li>
+                    <li class="active"><i class="fa fa-home"></i> Eventos</li>
                 </ol>
             </div>
         </div>
@@ -115,18 +115,20 @@
                         <table class="table">
                         <thead>
                             <tr>
-                                <th>Nome Fantasia</th>
-                                <th>Cidade</th>
-                                <th>Estado</th>
+                                <th>Evento</th>
+                                <th>Local</th>
+                                <th>Cidade - UF</th>
+                                <th>Data do Evento</th>
                                 <th>Situação</th>
                                 <th>#</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr ng-repeat="un in lista">
-                                <td>{{un.nomefantasia}}</td>
-                                <td>{{un.cidade}}</td>
-                                <td>{{un.estado}}</td>
+                                <td>{{un.evento}}</td>
+                                <td>{{un.local}}</td>
+                                <td>{{un.cidadeuf}}</td>
+                                <td>{{un.dtevento}}</td>
                                 <td>{{un.situacao}}</td>
                                 <td><a href="#" 
                                        ng-click="editar(un)" 
@@ -152,15 +154,15 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Informações do Fornecedor</h4>
+        <h4 class="modal-title" id="myModalLabel">Informações do Evento</h4>
       </div>
       <div class="modal-body">
           
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
           <li class="active">   <a href="#principal"    role="tab" data-toggle="tab">Principal</a></li>
-          <li>                  <a href="#endereco"     role="tab" data-toggle="tab" class="btnmap">Endereço</a></li>
-          <li>                  <a href="#contato"      role="tab" data-toggle="tab">Contato</a></li>
+          <li>                  <a href="#descricao"    role="tab" data-toggle="tab" class="btnmap">Descrição</a></li>
+          <li>                  <a href="#descricao"    role="tab" data-toggle="tab" class="btnmap">Ingressos</a></li>
         </ul>
         
         <form>
@@ -170,60 +172,60 @@
                 <br>
                 <input  type    ="hidden"
                         value   ="0"
-                        ng-model="fornecedor.id">
-                <label>Razão Social</label> 
+                        ng-model="evento.id">
+                <label>Evento</label> 
                 <div class="input-group col-xs-18 col-md-12" autofocus>  
                     <input type         ="text" 
                            class        ="form-control" 
-                           ng-model     ="fornecedor.razaosocial" 
-                           placeholder  ="digite conforme documento" 
+                           ng-model     ="evento.evento" 
+                           placeholder  ="Nome do evento para o público" 
                            autofocus>
                 </div>
                 <br>
-                <label>Nome de Fantasia</label>
+                <label>Data do Evento</label>
                 <div class="input-group col-xs-18 col-md-12">
                     <input type         ="text" 
                            class        ="form-control" 
-                           ng-model     ="fornecedor.nomefantasia"
-                           placeholder  ="digite conforme documento">
+                           ng-model     ="evento.dtevento"
+                           placeholder  ="Data da realização do evento">
                 </div>
                 <br>
-                <label>Nome do Responsável</label>
+                <label>Estabelecimento</label>
                 <div class="input-group col-xs-18 col-md-12">
                     <input type         ="text" 
                            class        ="form-control"
-                           ng-model     ="fornecedor.nomeresponsavel"
-                           placeholder  ="proprierário, sócio, diretor, gerente...">
+                           ng-model     ="evento.estabelecimento"
+                           placeholder  ="Estabelecimento que será realizado o evento">
                 </div>
                 <br>
                 <div class="row">
                     <div class="col-md-6">
-                    <label>CNPJ</label>
+                    <label>Abertura</label>
                     <div class="input-group col-xs-18 col-md-12">
                         <input type         ="text" 
                                class        ="form-control"
-                               ng-model     ="fornecedor.cnpj"
-                               placeholder  ="digite o número do CNPJ">
+                               ng-model     ="evento.abertura"
+                               placeholder  ="abertura">
                     </div>
                     </div>
                     <div class="col-md-6">
-                    <label>Inscrição Estadual</label>
+                    <label>Início</label>
                     <div class="input-group col-xs-18 col-md-12">
                         <input type         ="text" 
                                class        ="form-control"
-                               ng-model     ="fornecedor.inscricaoestadual"
-                               placeholder  ="digite a inscrição estadual">
+                               ng-model     ="evento.inicio"
+                               placeholder  ="inicio">
                     </div>
                     </div>
                 </div>
                 <br>
                 <div class="row">
                     <div class="col-md-6">
-                    <label>Inscrição Municipal</label>
+                    <label>Classificação</label>
                     <div class="input-group col-xs-18 col-md-12">
                     <input type             ="text" 
                            class            ="form-control"
-                           ng-model         ="fornecedor.inscricaomunicipal"
+                           ng-model         ="evento.classificacao"
                            placeholder      ="digite a inscrição municipal">
                     </div>
                     </div>
@@ -232,150 +234,29 @@
                     <div class="input-group col-xs-18 col-md-12">
                     <input type             ="text" 
                            class            ="form-control"
-                           ng-model         ="fornecedor.situacao"
+                           ng-model         ="evento.situacao"
                            placeholder      ="digite a inscrição municipal">
                     </div>
                     </div>
                 </div>
+                //urlyoutube
+                //website 
+                //tags 
             </div>
           <div class="tab-pane"         id="endereco">
               <br> 
-              <label>Logradouro</label> 
+              <label>Descrição</label> 
               <div class="input-group col-xs-18 col-md-12" autofocus>  
                   <input type           ="text" 
                          class          ="form-control" 
-                         ng-model       ="fornecedor.logradouro"
-                         placeholder    ="rua, avenida, servidão ..." 
+                         ng-model       ="evento.descricao"
+                         placeholder    ="Relatar aqui o que irá acontecer no evento e suas atrações" 
                          autofocus>
-              </div>
-              <br>
-              <div class="row">
-                    <div class="col-md-6">
-                        <label>Complemento</label> 
-                        <div class="input-group col-xs-18 col-md-12">  
-                            <input type         ="text" 
-                                   class        ="form-control"
-                                   ng-model     ="fornecedor.complemento"
-                                   placeholder  ="conjunto, condomínio, residencial ...">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label>Bairro</label> 
-                        <div class="input-group col-xs-18 col-md-12">  
-                            <input type         ="text" 
-                                   class        ="form-control"
-                                   ng-model     ="fornecedor.bairro"
-                                   placeholder  ="...">
-                        </div>
-                    </div>
-              </div>
-              <br>
-              <div class="row">
-                    <div class="col-md-6">
-                        <label>Cidade</label> 
-                        <div class="input-group col-xs-18 col-md-12">  
-                            <input type         ="text" 
-                                   class        ="form-control"
-                                   ng-model     ="fornecedor.cidade"
-                                   placeholder  ="...">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label>Estado</label> 
-                        <div class="input-group col-xs-18 col-md-12">  
-                            <input type         ="text" 
-                                   class        ="form-control"
-                                   ng-model     ="fornecedor.estado"
-                                   placeholder  ="...">
-                        </div>
-                    </div>
-              </div>
-              <br>
-              <div class="row">
-                    <div class="col-md-6">
-                        <label>CEP</label> 
-                        <div class="input-group col-xs-18 col-md-12">  
-                            <input type         ="text" 
-                                   class        ="form-control" 
-                                   ng-model     ="fornecedor.cep"
-                                   placeholder  ="_____-___">
-                        </div>
-                    </div>  
-                    <div class="col-md-6">
-                        <label>Caixa Postal</label> 
-                        <div class="input-group col-xs-18 col-md-12">  
-                             <input type        ="text" 
-                                    class       ="form-control"
-                                    ng-model    ="fornecedor.caixapostal"
-                                    placeholder ="...">
-                        </div>
-                    </div>
-              </div>
-              <br>    
-              <div class="row">
-                <div id="map_canvas"></div>
               </div>
           </div>
           <div class="tab-pane"         id="contato">
               <br> 
-              <label>Nome de contato</label> 
-              <div class="input-group col-xs-18 col-md-12" autofocus>  
-                  <input type        ="text" 
-                         class       ="form-control"
-                         ng-model    ="fornecedor.nomecontato"
-                         placeholder ="nome do gerente, funcionário ou encarregado..." 
-                         autofocus>
-              </div>
-              <br> 
-              <div class="row">
-                    <div class="col-md-6">
-                        <label>Cargo</label> 
-                        <div class="input-group col-xs-18 col-md-12">  
-                            <input type         ="text" 
-                                   class        ="form-control" 
-                                   ng-model     ="fornecedor.cargo"
-                                   placeholder  ="...">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label>Setor</label> 
-                        <div class="input-group col-xs-18 col-md-12">  
-                            <input type         ="text" 
-                                   class        ="form-control" 
-                                   ng-model     ="fornecedor.setor"
-                                   placeholder  ="...">
-                        </div>
-                    </div>
-              </div>
-              <br> 
-              <div class="row">
-                    <div class="col-md-6">
-                        <label>E-mail</label> 
-                        <div class="input-group col-xs-18 col-md-12">  
-                            <input type         ="email" 
-                                   class        ="form-control" 
-                                   ng-model     ="fornecedor.email"
-                                   placeholder  ="...">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label>Telefone</label> 
-                        <div class="input-group col-xs-18 col-md-12">  
-                            <input type         ="text" 
-                                   class        ="form-control" 
-                                   ng-model     ="fornecedor.telefone"
-                                   placeholder  ="(000) 00000-0000">
-                        </div>
-                    </div>
-              </div>
-              <br> 
-              <label>Website</label> 
-              <div class="input-group col-xs-18 col-md-12">  
-                  <input type        ="text" 
-                         class       ="form-control" 
-                         ng-model    ="fornecedor.website"
-                         placeholder ="www...">
-              </div>
+              <label>Genero</label> 
           </div>
         </div>          
         </form>
