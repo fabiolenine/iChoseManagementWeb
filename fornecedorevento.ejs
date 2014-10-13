@@ -124,12 +124,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="un in lista">
-                                <td>{{un.evento}}</td>
-                                <td>{{un.local}}</td>
-                                <td>{{un.cidadeuf}}</td>
-                                <td>{{un.dtevento}}</td>
-                                <td>{{un.situacao}}</td>
+                            <tr ng-repeat="event in eventos">
+                                <td>{{event.evento}}</td>
+                                <td>{{event.local}}</td>
+                                <td>{{event.cidadeuf}}</td>
+                                <td>{{event.dtevento}}</td>
+                                <td>{{event.situacao}}</td>
                                 <td><a href="#" 
                                        ng-click="editar(un)" 
                                        data-toggle="modal" 
