@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" ng-app>
+<html lang="pt-br" ng-app="iChoseEvent">
     <head>
         <meta charset="utf-8">
         <meta name="viewport"     content="width=device-width, initial-scale=1.0">
@@ -17,7 +17,7 @@
         <!-- Page Specific CSS -->
         <link rel="stylesheet" type="text/css" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
     </head>
-    <body ng-controller="providerCTRL">
+    <body ng-controller="eventCTRL">
         <div id="fullscreen_bg" class="fullscreen_bg"></div>
         <div id="wrapper">
 
@@ -162,7 +162,7 @@
         <ul class="nav nav-tabs" role="tablist">
           <li class="active">   <a href="#principal"    role="tab" data-toggle="tab">Principal</a></li>
           <li>                  <a href="#descricao"    role="tab" data-toggle="tab" class="btnmap">Descrição</a></li>
-          <li>                  <a href="#descricao"    role="tab" data-toggle="tab" class="btnmap">Ingressos</a></li>
+          <li>                  <a href="#ingressos"    role="tab" data-toggle="tab" class="btnmap">Ingressos</a></li>
         </ul>
         
         <form>
@@ -239,11 +239,8 @@
                     </div>
                     </div>
                 </div>
-                //urlyoutube
-                //website 
-                //tags 
             </div>
-          <div class="tab-pane"         id="endereco">
+          <div class="tab-pane"         id="descricao">
               <br> 
               <label>Descrição</label> 
               <div class="input-group col-xs-18 col-md-12" autofocus>  
@@ -254,7 +251,7 @@
                          autofocus>
               </div>
           </div>
-          <div class="tab-pane"         id="contato">
+          <div class="tab-pane"         id="ingressos">
               <br> 
               <label>Genero</label> 
           </div>
@@ -295,7 +292,11 @@
                 type="text/javascript">                                                                             </script>
         <script src="https://s3-us-west-2.amazonaws.com/ichose/site/management/js/googlemaps.js"
                 type="text/javascript">                                                                             </script>
-        <script src="https://s3-us-west-2.amazonaws.com/ichose/site/management/js/managementController.js"
+        <script src="https://s3-us-west-2.amazonaws.com/ichose/site/management/js/eventController.js"
                 type="text/javascript">                                                                             </script>
-  </body>
+        <script src="https://s3-us-west-2.amazonaws.com/ichose/site/management/js/eventCore.js"
+                type="text/javascript">                                                                             </script>
+        <script src="https://s3-us-west-2.amazonaws.com/ichose/site/management/js/eventService.js"
+                type="text/javascript">                                                                             </script>
+    </body>
 </html>
