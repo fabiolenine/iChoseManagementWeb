@@ -9,11 +9,11 @@ angular.module('eventService',[])
         list    : function() {
             return $http.get('/event/list');
         },
-        insert  : function(eventData) {
-            return $http.post('/event/insert', eventData);
+        insert  : function(elemData) {
+            return $http.post('/event/insert', elemData);
         },
-        update  : function(eventData) {
-            return $http.post('/event/update', eventData);
+        update  : function(elemData) {
+            return $http.post('/event/update', elemData);
         },
         erase   : function(id) {
             return $http.post('/event/erase', + id);
