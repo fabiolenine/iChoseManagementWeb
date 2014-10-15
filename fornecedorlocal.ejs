@@ -116,11 +116,7 @@
                         </thead>
                         <tbody>
                             <tr ng-repeat="local in locals | filter:filtro">
-                                <td>
-                                    <a class="pull-left" href="#">
-                                        <img class="media-object" src="{{local.imagembanner}}" alt="{{formData.estabelecimento}}">
-                                    </a>
-                                    {{local.estabelecimento}}</td>
+                                <td>{{local.estabelecimento}}</td>
                                 <td><a ng-href="{{local.website}}" title={{local.estabelecimento}} target="_blank">{{local.website}}</a></td>
                                 <td>{{local.cidade}} - {{local.estado}}</td>
                                 <td>{{local.situacao}}</td>
@@ -262,7 +258,6 @@
                            placeholder  ="http://..." 
                            autofocus>
                 </div>
-                <div ng-show="formData.imagembanner" class="alert alert-warning" role="alert">...</div>
                 <br> 
           </div>
         </div>          
