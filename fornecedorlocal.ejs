@@ -239,34 +239,41 @@
             </div>
           <div class="tab-pane"         id="endereco">
               <br> 
-                            <label>Logradouro</label> 
+              <label>Logradouro</label> 
               <div class="input-group col-xs-18 col-md-12" autofocus>  
                   <input type           ="text" 
                          class          ="form-control" 
-                         ng-model       ="fornecedor.logradouro"
+                         ng-model       ="formData.logradouro"
                          placeholder    ="rua, avenida, servidão ..." 
                          autofocus>
               </div>
               <br>
+              <label>Complemento</label> 
+              <div class="input-group col-xs-18 col-md-12">  
+                  <input type         ="text" 
+                         class        ="form-control"
+                         ng-model     ="formData.complemento"
+                         placeholder  ="conjunto, condomínio, residencial ...">
+              </div>
               <div class="row">
-                    <div class="col-md-6">
-                        <label>Complemento</label> 
-                        <div class="input-group col-xs-18 col-md-12">  
-                            <input type         ="text" 
-                                   class        ="form-control"
-                                   ng-model     ="fornecedor.complemento"
-                                   placeholder  ="conjunto, condomínio, residencial ...">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
+                  <div class="col-md-6">
                         <label>Bairro</label> 
                         <div class="input-group col-xs-18 col-md-12">  
                             <input type         ="text" 
                                    class        ="form-control"
-                                   ng-model     ="fornecedor.bairro"
+                                   ng-model     ="formData.bairro"
                                    placeholder  ="...">
                         </div>
-                    </div>
+                  </div>
+                  <div class="col-md-6">
+                        <label>Estado</label> 
+                        <div class="input-group col-xs-18 col-md-12">  
+                            <input type         ="text" 
+                                   class        ="form-control"
+                                   ng-model     ="formData.estado"
+                                   placeholder  ="...">
+                        </div>
+                  </div>
               </div>
               <br>
               <div class="row">
@@ -275,42 +282,20 @@
                         <div class="input-group col-xs-18 col-md-12">  
                             <input type         ="text" 
                                    class        ="form-control"
-                                   ng-model     ="fornecedor.cidade"
+                                   ng-model     ="formData.cidade"
                                    placeholder  ="...">
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <label>Estado</label> 
-                        <div class="input-group col-xs-18 col-md-12">  
-                            <input type         ="text" 
-                                   class        ="form-control"
-                                   ng-model     ="fornecedor.estado"
-                                   placeholder  ="...">
-                        </div>
-                    </div>
-              </div>
-              <br>
-              <div class="row">
                     <div class="col-md-6">
                         <label>CEP</label> 
                         <div class="input-group col-xs-18 col-md-12">  
                             <input type         ="text" 
                                    class        ="form-control" 
-                                   ng-model     ="fornecedor.cep"
+                                   ng-model     ="formData.cep"
                                    placeholder  ="_____-___">
-                        </div>
-                    </div>  
-                    <div class="col-md-6">
-                        <label>Caixa Postal</label> 
-                        <div class="input-group col-xs-18 col-md-12">  
-                             <input type        ="text" 
-                                    class       ="form-control"
-                                    ng-model    ="fornecedor.caixapostal"
-                                    placeholder ="...">
                         </div>
                     </div>
               </div>
-              <br>    
               <div class="row">
                 <div id="map_canvas"></div>
               </div>
