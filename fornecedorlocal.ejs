@@ -104,10 +104,10 @@
                         </div><!-- /input-group -->
                     </div>
                     <div class="table-responsive"> 
-                        <table class="table local">
+                        <table class="table">
                         <thead>
                             <tr>
-                                <th><a href="#" ng-click="reverse=!reverse;order(estabelecimento,reverse)">Estabelecimento</a></th>
+                                <th><a href="#" ng-click="predicate = 'estabelecimento'; reverse=!reverse">Estabelecimento</a></th>
                                 <th>WebSite</th>
                                 <th>Cidade - UF</th>
                                 <th>Situação</th>
@@ -115,7 +115,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="local in locals | filter:filtro | orderBy:'estabelecimento'">
+                            <tr ng-repeat="local in locals | filter:filtro">
                                 <td>{{local.estabelecimento}}</td>
                                 <td><a ng-href="{{local.website}}" title={{local.estabelecimento}} target="_blank">{{local.website}}</a></td>
                                 <td>{{local.cidade}} - {{local.estado}}</td>
