@@ -166,12 +166,12 @@
                 <input  type    ="hidden"
                         value   ="0"
                         ng-model="formData.id">
-                <div class="btn-group"> 
+                <div class="btn-group col-xs-18 col-md-12"> 
                     <a class="btn btn-default dropdown-toggle btn-select2" data-toggle="dropdown" href="#">Fornecedor 
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" ng-repeat="provider in providers | orderBy:descricao">
-                        <li><a href="#">California</a></li>
+                        <li><a href="#">{{provider.descricao}}</a></li>
                     </ul>
                 </div>
                 <br>
@@ -188,7 +188,7 @@
                     <input type         ="text" 
                            class        ="form-control"
                            ng-model     ="formData.razaosocial"
-                           placeholder  ="Estabelecimento que será realizado o evento">
+                           placeholder  ="Nome da razão social para emissão oficial">
                 </div>
                 <br>
                 <div class="row">
@@ -197,8 +197,8 @@
                     <div class="input-group col-xs-18 col-md-12">
                         <input type         ="text" 
                                class        ="form-control"
-                               ng-model     ="formData.abertura"
-                               placeholder  ="abertura">
+                               ng-model     ="formData.cnpj"
+                               placeholder  ="Cadastro Nacional de Pessoa Jurídica">
                     </div>
                     </div>
                     <div class="col-md-6">
@@ -206,8 +206,8 @@
                     <div class="input-group col-xs-18 col-md-12">
                         <input type         ="text" 
                                class        ="form-control"
-                               ng-model     ="formData.inicio"
-                               placeholder  ="inicio">
+                               ng-model     ="formData.inscricaoestadual"
+                               placeholder  ="digite a inscrição estadual">
                     </div>
                     </div>
                 </div>
@@ -218,7 +218,7 @@
                     <div class="input-group col-xs-18 col-md-12">
                     <input type             ="text" 
                            class            ="form-control"
-                           ng-model         ="formData.classificacao"
+                           ng-model         ="formData.inscricaomunicipal"
                            placeholder      ="digite a inscrição municipal">
                     </div>
                     </div>
@@ -228,7 +228,7 @@
                     <input type             ="text" 
                            class            ="form-control"
                            ng-model         ="formData.situacao"
-                           placeholder      ="digite a inscrição municipal">
+                           placeholder      ="analise da situação">
                     </div>
                     </div>
                 </div>
