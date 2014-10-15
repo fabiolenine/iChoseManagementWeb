@@ -166,29 +166,13 @@
                 <input  type    ="hidden"
                         value   ="0"
                         ng-model="formData.id">
-                <label>Fornecedor</label></label> 
-                
                 <div class="btn-group"> 
                     <a class="btn btn-default dropdown-toggle btn-select2" data-toggle="dropdown" href="#">Fornecedor 
                         <span class="caret"></span>
                     </a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu" ng-repeat="provider in providers | orderBy:descricao">
                         <li><a href="#">California</a></li>
-                        <li><a href="#">New York</a></li>
-                        <li><a href="#">Massachusetts</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Quebec</a></li>
-                        <li><a href="#">Ontario</a></li>
-                        <li><a href="#">British Columbia</a></li>
                     </ul>
-                </div>
-            
-                <div class="input-group col-xs-18 col-md-12" autofocus>  
-                    <input type         ="text" 
-                           class        ="form-control" 
-                           ng-model     ="formData.fornecedorid" 
-                           placeholder  ="Escolha o fornecedor..." 
-                           autofocus>
                 </div>
                 <br>
                 <label>Estabelecimento</label>
