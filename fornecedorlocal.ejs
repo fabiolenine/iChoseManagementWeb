@@ -193,15 +193,16 @@
                 <br>
                 <div class="row">
                     <div class="col-md-6">
-                    <label>CNPJ</label>
+                    <label>CNPJ + {{formData.cnpj}}</label>
                     <div class="input-group col-xs-18 col-md-12">
                         <input type         ="text" 
                                class        ="form-control"
                                ng-model     ="formData.cnpj"
+                               name         ="ncnpj"
                                placeholder  ="Cadastro Nacional de Pessoa Jurídica"
-                               onKeyPress   ="MascaraCNPJ({{formData.cnpj}});" 
+                               onKeyPress   ="MascaraCNPJ(ncnpj);" 
                                maxlength    ="18" 
-                               onBlur       ="ValidarCNPJ({{formData.cnpj}});">
+                               onBlur       ="ValidarCNPJ(ncnpj);">
                     </div>
                     </div>
                     <div class="col-md-6">
