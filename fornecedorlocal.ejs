@@ -109,7 +109,6 @@
                             <tr>
                                 <th>Estabelecimento</th>
                                 <th>WebSite</th>
-                                <th>Bairro</th>
                                 <th>Cidade - UF</th>
                                 <th>Situação</th>
                                 <th>Opções</th>
@@ -119,7 +118,6 @@
                             <tr ng-repeat="local in locals | filter:filtro">
                                 <td>{{local.estabelecimento}}</td>
                                 <td><a ng-href="{{local.website}}" title={{local.estabelecimento}} target="_blank">{{local.website}}</a></td>
-                                <td>{{local.bairro}}</td>
                                 <td>{{local.cidade}} - {{local.estado}}</td>
                                 <td>{{local.situacao}}</td>
                                 <td><a href="#" 
