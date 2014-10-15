@@ -170,8 +170,17 @@
                         <img ng-src="{{formData.imagembanner}}" alt="{{formData.estabelecimento}}">
                     </a>
                 </div>
-                <label>Estabelecimento</label> 
+                <label>URL da logo</label> 
                 <div class="input-group col-xs-12 col-md-9" autofocus>  
+                    <input type         ="text" 
+                           class        ="form-control" 
+                           ng-model     ="formData.imagembanner" 
+                           placeholder  ="http://..." 
+                           autofocus>
+                </div>
+                <br>
+                <label>Estabelecimento</label> 
+                <div class="input-group col-xs-18 col-md-12" autofocus>  
                     <input type         ="text" 
                            class        ="form-control" 
                            ng-model     ="formData.evento" 
