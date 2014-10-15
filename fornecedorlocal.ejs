@@ -95,7 +95,7 @@
                     <div class="panel-heading">Consulta</div>
                     <div class="panel-body">
                         <div class="input-group">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" ng-model="filtro">
                             <div class="input-group-btn">
                                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                                     <span class="glyphicon glyphicon-search"></span>
@@ -125,7 +125,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="local in locals">
+                            <tr ng-repeat="local in locals | filter:filtro">
                                 <td>{{local.estabelecimento}}</td>
                                 <td><a ng-href="{{local.website}}" title={{local.estabelecimento}} target="_blank">{{local.website}}</a></td>
                                 <td>{{local.bairro}}</td>
