@@ -199,9 +199,9 @@
                                class        ="form-control"
                                ng-model     ="formData.cnpj"
                                placeholder  ="Cadastro Nacional de Pessoa Jurídica"
-                               onKeyPress   ="MascaraCNPJ(formData.cnpj);" 
+                               onKeyPress   ="MascaraCNPJ({{formData.cnpj}});" 
                                maxlength    ="18" 
-                               onBlur       ="ValidarCNPJ(formData.cnpj);">
+                               onBlur       ="ValidarCNPJ({{formData.cnpj}});">
                     </div>
                     </div>
                     <div class="col-md-6">
