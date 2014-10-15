@@ -121,7 +121,7 @@
                                 <td>{{local.cidade}} - {{local.estado}}</td>
                                 <td>{{local.situacao}}</td>
                                 <td><a href="#" 
-                                       ng-click="editar(un)" 
+                                       ng-click="editar(local)" 
                                        data-toggle="modal" 
                                        data-target="#myModal"> 
                                        <i class="glyphicon glyphicon-edit"></i>
@@ -165,8 +165,13 @@
                 <input  type    ="hidden"
                         value   ="0"
                         ng-model="formData.id">
+                <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                        <img ng-src="{{formData.imagembanner}}" alt="{{formData.estabelecimento}}">
+                    </a>
+                </div>
                 <label>Estabelecimento</label> 
-                <div class="input-group col-xs-18 col-md-12" autofocus>  
+                <div class="input-group col-xs-12 col-md-9" autofocus>  
                     <input type         ="text" 
                            class        ="form-control" 
                            ng-model     ="formData.evento" 

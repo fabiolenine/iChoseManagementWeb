@@ -25,7 +25,7 @@ angular.module('localController',[])
                 
                 // call the insert function from our service (returns a promise object)
                 
-                Events.insert($scope.formData)
+                Locals.insert($scope.formData)
                 
                 // if successful creation, call our get function to get all the new events
                 
@@ -35,7 +35,11 @@ angular.module('localController',[])
                 });
             }
         };
-
+        
+        $scope.editar = function(data){
+            $scope.formData = data;
+        };
+        
         // Update ==================================================================================
         // Update a event after checking it
         $scope.update = function() {
