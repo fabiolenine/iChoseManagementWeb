@@ -121,7 +121,7 @@
                                 <th>Bairro</th>
                                 <th>Cidade - UF</th>
                                 <th>Situação</th>
-                                <th></th>
+                                <th>Opções</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -134,10 +134,12 @@
                                 <td><a href="#" 
                                        ng-click="editar(un)" 
                                        data-toggle="modal" 
-                                       data-target="#myModal">editar
+                                       data-target="#myModal"> 
+                                       editar
                                     </a> | 
                                     <a href="#" 
-                                       ng-click="erase(local._id)">excluir
+                                       ng-click="erase(local._id)">
+                                        <i class="glyphicon glyphicon-remove"></i>
                                     </a></td>
                             </tr>
                         </tbody>
