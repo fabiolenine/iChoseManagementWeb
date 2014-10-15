@@ -153,8 +153,8 @@
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
           <li class="active">   <a href="#principal"    role="tab" data-toggle="tab">Principal</a></li>
-          <li>                  <a href="#endereco"    role="tab" data-toggle="tab" class="btnmap">Endereço</a></li>
-          <li>                  <a href="#ingressos"    role="tab" data-toggle="tab" class="btnmap">?????????</a></li>
+          <li>                  <a href="#endereco"     role="tab" data-toggle="tab" class="btnmap">Endereço</a></li>
+          <li>                  <a href="#logo"         role="tab" data-toggle="tab" class="btnmap">Logo</a></li>
         </ul>
         
         <form>
@@ -165,20 +165,6 @@
                 <input  type    ="hidden"
                         value   ="0"
                         ng-model="formData.id">
-                <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
-                        <img ng-src="{{formData.imagembanner}}" alt="{{formData.estabelecimento}}">
-                    </a>
-                </div>
-                <label>URL da logo</label> 
-                <div class="input-group col-xs-12 col-md-9" autofocus>  
-                    <input type         ="text" 
-                           class        ="form-control" 
-                           ng-model     ="formData.imagembanner" 
-                           placeholder  ="http://..." 
-                           autofocus>
-                </div>
-                <br>
                 <label>Estabelecimento</label> 
                 <div class="input-group col-xs-18 col-md-12" autofocus>  
                     <input type         ="text" 
@@ -257,9 +243,22 @@
                          autofocus>
               </div>
           </div>
-          <div class="tab-pane"         id="ingressos">
-              <br> 
-              <label>Genero</label> 
+          <div class="tab-pane"         id="logo">
+                <div class="col-xs-12 col-md-6">
+                    <a href="#" class="thumbnail">
+                        <img ng-src="{{formData.imagembanner}}" alt="{{formData.estabelecimento}}">
+                    </a>
+                </div>
+                <br>
+                <label>URL da logo</label> 
+                <div class="input-group col-xs-18 col-md-12" autofocus>  
+                    <input type         ="url" 
+                           class        ="form-control" 
+                           ng-model     ="formData.imagembanner" 
+                           placeholder  ="http://..." 
+                           autofocus>
+                </div>
+                <br> 
           </div>
         </div>          
         </form>
