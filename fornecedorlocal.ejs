@@ -166,34 +166,50 @@
                 <input  type    ="hidden"
                         value   ="0"
                         ng-model="formData.id">
-                <label>Estabelecimento</label> 
+                <label>Fornecedor</label></label> 
+                
+                <div class="btn-group"> 
+                    <a class="btn btn-default dropdown-toggle btn-select2" data-toggle="dropdown" href="#">Fornecedor 
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">California</a></li>
+                        <li><a href="#">New York</a></li>
+                        <li><a href="#">Massachusetts</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Quebec</a></li>
+                        <li><a href="#">Ontario</a></li>
+                        <li><a href="#">British Columbia</a></li>
+                    </ul>
+                </div>
+            
                 <div class="input-group col-xs-18 col-md-12" autofocus>  
                     <input type         ="text" 
                            class        ="form-control" 
-                           ng-model     ="formData.o" 
-                           placeholder  ="Nome do evento para o público" 
+                           ng-model     ="formData.fornecedorid" 
+                           placeholder  ="Escolha o fornecedor..." 
                            autofocus>
-                </div>
-                <br>
-                <label>Data do Evento</label>
-                <div class="input-group col-xs-18 col-md-12">
-                    <input type         ="text" 
-                           class        ="form-control" 
-                           ng-model     ="formData.dataevento"
-                           placeholder  ="Data da realização do evento">
                 </div>
                 <br>
                 <label>Estabelecimento</label>
                 <div class="input-group col-xs-18 col-md-12">
                     <input type         ="text" 
+                           class        ="form-control" 
+                           ng-model     ="formData.Estabelecimento"
+                           placeholder  ="Nome do estabelecimento para o público...">
+                </div>
+                <br>
+                <label>Razão Social</label>
+                <div class="input-group col-xs-18 col-md-12">
+                    <input type         ="text" 
                            class        ="form-control"
-                           ng-model     ="formData.estabelecimento"
+                           ng-model     ="formData.razaosocial"
                            placeholder  ="Estabelecimento que será realizado o evento">
                 </div>
                 <br>
                 <div class="row">
                     <div class="col-md-6">
-                    <label>Abertura</label>
+                    <label>CNPJ</label>
                     <div class="input-group col-xs-18 col-md-12">
                         <input type         ="text" 
                                class        ="form-control"
@@ -202,7 +218,7 @@
                     </div>
                     </div>
                     <div class="col-md-6">
-                    <label>Início</label>
+                    <label>Inscrição Estadual</label>
                     <div class="input-group col-xs-18 col-md-12">
                         <input type         ="text" 
                                class        ="form-control"
@@ -214,7 +230,7 @@
                 <br>
                 <div class="row">
                     <div class="col-md-6">
-                    <label>Classificação</label>
+                    <label>Inscrição Municipal</label>
                     <div class="input-group col-xs-18 col-md-12">
                     <input type             ="text" 
                            class            ="form-control"
