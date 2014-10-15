@@ -104,10 +104,10 @@
                         </div><!-- /input-group -->
                     </div>
                     <div class="table-responsive"> 
-                        <table class="table">
+                        <table class="table local">
                         <thead>
                             <tr>
-                                <th>Estabelecimento</th>
+                                <th><a href="#" ng-click="reverse=!reverse;order(estabelecimento,reverse)">Estabelecimento</a></th>
                                 <th>WebSite</th>
                                 <th>Cidade - UF</th>
                                 <th>Situação</th>
@@ -169,7 +169,7 @@
                 <div class="input-group col-xs-18 col-md-12" autofocus>  
                     <input type         ="text" 
                            class        ="form-control" 
-                           ng-model     ="formData.evento" 
+                           ng-model     ="formData.o" 
                            placeholder  ="Nome do evento para o público" 
                            autofocus>
                 </div>
