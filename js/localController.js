@@ -4,7 +4,7 @@ angular.module('localController',[])
     //inject the Event service factory into our controller
     .controller('localCTRL', function($scope, $http, Locals) {
         $scope.formData = {};
-        $scope.predicate = '-estabelecimento';
+        $scope.predicate = 'estabelecimento';
         
         // List ===================================================================================
         // When landing on the page, get all events and show them
