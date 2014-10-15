@@ -162,15 +162,15 @@
         <!-- Tab panes -->
         <div class="tab-content">
             <div class="tab-pane active"  id="principal">
-                <br>
                 <input  type    ="hidden"
                         value   ="0"
                         ng-model="formData.id">
+                <br>
                 <div class="btn-group col-xs-18 col-md-12"> 
                     <a class="btn btn-default dropdown-toggle btn-select2" data-toggle="dropdown" href="#">Fornecedor 
                         <span class="caret"></span>
                     </a>
-                    <ul class="dropdown-menu" ng-repeat="provider in providers | orderBy:descricao">
+                    <ul class="dropdown-menu" ng-repeat="provider in providers | orderBy:'descricao'">
                         <li><a href="#">{{provider.descricao}}</a></li>
                     </ul>
                 </div>
@@ -198,7 +198,10 @@
                         <input type         ="text" 
                                class        ="form-control"
                                ng-model     ="formData.cnpj"
-                               placeholder  ="Cadastro Nacional de Pessoa Jurídica">
+                               placeholder  ="Cadastro Nacional de Pessoa Jurídica"
+                               onKeyPress   ="MascaraCNPJ(formData.cnpj);" 
+                               maxlength    ="18" 
+                               onBlur       ="ValidarCNPJ(formData.cnpj);">
                     </div>
                     </div>
                     <div class="col-md-6">
@@ -303,6 +306,8 @@
         <script src="https://s3-us-west-2.amazonaws.com/ichose/site/management/js/localCore.js"
                 type="text/javascript">                                                                             </script>
         <script src="https://s3-us-west-2.amazonaws.com/ichose/site/management/js/localService.js"
+                type="text/javascript">                                                                             </script>
+        <script src="https://s3-us-west-2.amazonaws.com/ichose/site/management/js/mascaraValidacao.js"
                 type="text/javascript">                                                                             </script>
     </body>
 </html>
