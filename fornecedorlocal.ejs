@@ -116,28 +116,28 @@
                         <table class="table">
                         <thead>
                             <tr>
-                                <th>Evento</th>
-                                <th>Local</th>
+                                <th>Estabelecimento</th>
+                                <th>Razão Social</th>
+                                <th>Bairro</th>
                                 <th>Cidade - UF</th>
-                                <th>Data do Evento</th>
                                 <th>Situação</th>
-                                <th>#</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="event in events">
-                                <td>{{event.evento}}</td>
-                                <td>{{event.website}}</td>
-                                <td>{{event.cidade}}</td>
-                                <td>{{event.datatevento}}</td>
-                                <td>{{event.forauso}}</td>
+                            <tr ng-repeat="local in locals">
+                                <td>{{local.estabelecimento}}</td>
+                                <td>{{local.razaosocial}}</td>
+                                <td>{{local.bairro}}</td>
+                                <td>{{local.cidade}} - {{local.estado}}</td>
+                                <td>{{local.situacao}}</td>
                                 <td><a href="#" 
                                        ng-click="editar(un)" 
                                        data-toggle="modal" 
                                        data-target="#myModal">editar
                                     </a> | 
                                     <a href="#" 
-                                       ng-click="erase(event._id)">excluir
+                                       ng-click="erase(local._id)">excluir
                                     </a></td>
                             </tr>
                         </tbody>
@@ -155,15 +155,15 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Informações do Evento</h4>
+        <h4 class="modal-title" id="myModalLabel">Informações do Estabelecimento</h4>
       </div>
       <div class="modal-body">
           
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
           <li class="active">   <a href="#principal"    role="tab" data-toggle="tab">Principal</a></li>
-          <li>                  <a href="#descricao"    role="tab" data-toggle="tab" class="btnmap">Descrição</a></li>
-          <li>                  <a href="#ingressos"    role="tab" data-toggle="tab" class="btnmap">Ingressos</a></li>
+          <li>                  <a href="#endereco"    role="tab" data-toggle="tab" class="btnmap">Endereço</a></li>
+          <li>                  <a href="#ingressos"    role="tab" data-toggle="tab" class="btnmap">?????????</a></li>
         </ul>
         
         <form>
@@ -174,7 +174,7 @@
                 <input  type    ="hidden"
                         value   ="0"
                         ng-model="formData.id">
-                <label>Evento</label> 
+                <label>Estabelecimento</label> 
                 <div class="input-group col-xs-18 col-md-12" autofocus>  
                     <input type         ="text" 
                            class        ="form-control" 
@@ -241,7 +241,7 @@
                     </div>
                 </div>
             </div>
-          <div class="tab-pane"         id="descricao">
+          <div class="tab-pane"         id="endereco">
               <br> 
               <label>Descrição</label> 
               <div class="input-group col-xs-18 col-md-12" autofocus>  
