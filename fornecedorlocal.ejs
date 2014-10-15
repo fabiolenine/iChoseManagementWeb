@@ -127,7 +127,7 @@
                         <tbody>
                             <tr ng-repeat="local in locals">
                                 <td>{{local.estabelecimento}}</td>
-                                <td><a ng-href="{{local.website}}">{{local.website}}</a></td>
+                                <td><a ng-href="{{local.website}}" title={{local.estabelecimento}} target="_blank">{{local.website}}</a></td>
                                 <td>{{local.bairro}}</td>
                                 <td>{{local.cidade}} - {{local.estado}}</td>
                                 <td>{{local.situacao}}</td>
