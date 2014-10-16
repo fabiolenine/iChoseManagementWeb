@@ -10,11 +10,11 @@ angular.module('localService',[])
             return $http.get('/local/list');
         },
         insert  : function(elemData) {
-            return $http.post('/local/insert', elemData);
+            return $http.post('/local/salvar', elemData);
         },
-        update  : function(elemData) {
-            return $http.post('/local/update', elemData);
-        },
+        //update  : function(elemData) {
+        //    return $http.post('/local/update', elemData);
+        //},
         erase   : function(id) {
             return $http.post('/local/erase', + id);
         }
