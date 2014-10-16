@@ -329,7 +329,7 @@
                         <div class="input-group col-xs-18 col-md-12">
                             <input  type         ="text" 
                                     class        ="form-control" 
-                                    nome         ="vtelefone"
+                                    name         ="vtelefone"
                                     ng-model     ="formData.telefone"
                                     placeholder  ="telefone para contato..."
                                     onKeyPress   ="MascaraTelefone(vtelefone);" 
@@ -367,9 +367,10 @@
         <div class="col-lg-6">
             <div class="input-group">
                 <span class="input-group-addon">
-                    <input type     ="checkbox"
-                           class    ="form-control"
-                           ng-model ="formData.forauso">
+                    <input type         ="checkbox"
+                           ng-click     ="formData.forauso=!formData.forauso"
+                           ng-checked   ="formData.forauso"
+                           ng-model     ="formData.forauso">
                 </span>
                 <input type         ="text" 
                        class        ="form-control" 
