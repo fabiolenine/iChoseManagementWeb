@@ -292,12 +292,10 @@
                         <label>CEP</label> 
                         <div class="input-group col-xs-18 col-md-12">  
                             <input type         ="text" 
-                                   class        ="form-control" 
-                                   name         ="vcep"
+                                   class        ="form-control"
                                    ng-model     ="formData.cep"
-                                   onKeyPress   ="MascaraCep(vcep);"
                                    maxlength    ="10" 
-                                   onBlur       ="ValidaCep(vcep);">
+                                   pattern      = "/\d{2}\.\d{3}\-\d{3}/">
                         </div>
                     </div>
               </div>
@@ -329,12 +327,10 @@
                         <div class="input-group col-xs-18 col-md-12">
                             <input  type         ="text" 
                                     class        ="form-control" 
-                                    nome         ="vtelefone"
                                     ng-model     ="formData.telefone"
-                                    placeholder  ="telefone para contato..."
-                                    onKeyPress   ="MascaraTelefone(vtelefone);" 
+                                    placeholder  ="telefone para contato..." 
                                     maxlength    ="16"  
-                                    onBlur       ="ValidaTelefone(vtelefone);">
+                                    pattern      ="\\((10)|([1-9][1-9])\\)\\s9?[6-9][0-9]{3}-[0-9]{4}">
                         </div>
                     </div>
                     <div class="col-md-6">
