@@ -9,7 +9,7 @@ angular.module('localService',[])
         list    : function() {
             return $http.get('/local/list');
         },
-        insert  : function(elemData) {
+        salvar  : function(elemData) {
             return $http.post('/local/salvar', elemData);
         },
         //update  : function(elemData) {

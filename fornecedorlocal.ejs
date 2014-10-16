@@ -364,6 +364,18 @@
           
       </div>
       <div class="modal-footer">
+        <div class="col-lg-6">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <input type     ="checkbox"
+                           class    ="form-control"
+                           ng-model ="formData.forauso">
+                </span>
+                <input type         ="text" 
+                       class        ="form-control" 
+                       placeholder  ="Fora de uso">
+            </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
         <button type="button" class="btn btn-warning" data-dismiss="modal">Fechar</button>
         <button type="button" class="btn btn-success" data-dismiss="modal" ng-click="salvar()" >Salvar</button>
       </div>

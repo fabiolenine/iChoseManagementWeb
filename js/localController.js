@@ -16,7 +16,7 @@ angular.module('localController',[])
         
         // Insert =================================================================================
         // When submitting the add form, send the text to the node API
-        $scope.insert = function() {
+        $scope.salvar = function() {
             
             // validate the formData to make sure that something is there
             // if form is empty, nothing will happen
@@ -26,7 +26,7 @@ angular.module('localController',[])
                 
                 // call the insert function from our service (returns a promise object)
                 
-                Locals.insert($scope.formData)
+                Locals.salvar($scope.formData)
                 
                 // if successful creation, call our get function to get all the new events
                 
@@ -43,13 +43,13 @@ angular.module('localController',[])
         
         // Update ==================================================================================
         // Update a event after checking it
-        $scope.update = function() {
-            Events.update($scope.formData)
-                //if successful insert, call our list function to list all the new events
-            .success(function(data) {
-                $scope.locals = data;
-            });
-        };
+//        $scope.update = function() {
+//            Events.update($scope.formData)
+//                //if successful insert, call our list function to list all the new events
+//            .success(function(data) {
+//                $scope.locals = data;
+//            });
+//        };
         
         // Erase ==================================================================================
         // delete a event after checking it
