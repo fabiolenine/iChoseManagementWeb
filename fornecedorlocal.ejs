@@ -127,8 +127,9 @@
                                        data-target="#myModal"> 
                                        <i class="glyphicon glyphicon-edit"></i>
                                     </a> | 
-                                    <a href="#" 
-                                       ng-click="erase(local._id)">
+                                    <a href     ="#" 
+                                       ng-click ="erase(local._id)"
+                                       ng-hide  ="{{local.forauso}}">
                                         <i class="glyphicon glyphicon-remove"></i>
                                     </a></td>
                             </tr>
@@ -364,7 +365,7 @@
           
       </div>
       <div class="modal-footer">
-        <div class="col-lg-6">
+        <div class="col-lg-6" ng-show="formData.forauso">
             <div class="input-group">
                 <span class="input-group-addon">
                     <input type         ="checkbox"
