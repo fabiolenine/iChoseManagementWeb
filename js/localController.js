@@ -10,7 +10,6 @@ angular.module('localController',[])
         // Novo ===================================================================================
         $scope.novo = function(){
             $scope.formData = {};
-            $scope.locals   = [];
         };
 
         
@@ -40,7 +39,7 @@ angular.module('localController',[])
                 
                 .success(function(data) {
                     $scope.formData = {}; // clear the form so our user is ready to enter another
-                    $scope.locals = data; // assign our new list of events
+                    $scope.locals.push(data); // assign our new list of events
                 });
             }
         };
@@ -61,8 +60,8 @@ angular.module('localController',[])
         
         // Erase ==================================================================================
         // delete a event after checking it
-        $scope.erase = function(data) {
-            Events.erase(data._id)
+        $scope.erase = function(id) {
+            Locals.erase(id)
                 //if successful insert, call our list function to list all the new events
             .success(function(data) {
                 $scope.locals = data;
