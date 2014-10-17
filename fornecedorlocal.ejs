@@ -97,7 +97,11 @@
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="digite aqui para filtrar..." ng-model="filtro">
                             <div class="input-group-btn">
-                                <button class="btn btn-success" type="button" data-toggle="modal" data-target="#myModal">
+                                <button class       ="btn btn-success" 
+                                        type        ="button" 
+                                        data-toggle ="modal" 
+                                        data-target ="#myModal" 
+                                        ng-click    ="novo()">
                                     <span class="glyphicon glyphicon-plus"></span>
                                     Novo</button>
                             </div><!-- /btn-group -->
@@ -128,7 +132,7 @@
                                        <i class="glyphicon glyphicon-edit"></i>
                                     </a> | 
                                     <a href     ="#" 
-                                       ng-click ="erase(local._id)">
+                                       ng-click ="erase(local)">
                                         <i class="glyphicon glyphicon-remove"></i>
                                     </a></td>
                             </tr>

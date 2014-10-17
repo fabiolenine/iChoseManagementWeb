@@ -6,6 +6,14 @@ angular.module('localController',[])
         $scope.formData = {};
         $scope.predicate = 'estabelecimento';
         
+        
+        // Novo ===================================================================================
+        $scope.novo = function(){
+            $scope.formData = {};
+            $scope.locals   = [];
+        };
+
+        
         // List ===================================================================================
         // When landing on the page, get all events and show them
         // use the service to get all the events
@@ -53,8 +61,8 @@ angular.module('localController',[])
         
         // Erase ==================================================================================
         // delete a event after checking it
-        $scope.erase = function(id) {
-            Events.erase(id)
+        $scope.erase = function(data) {
+            Events.erase(data._id)
                 //if successful insert, call our list function to list all the new events
             .success(function(data) {
                 $scope.locals = data;
