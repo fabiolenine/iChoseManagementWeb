@@ -15,10 +15,7 @@
         <!-- Add custom CSS here -->
         <link rel="stylesheet" type="text/css" href="https://s3-us-west-2.amazonaws.com/ichose/site/management/css/ichose.css">
         <!-- Page Specific CSS -->
-        <link rel="stylesheet" type="text/css" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
-        
-        <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/css/bootstrap-select.min.css">
-        
+        <link rel="stylesheet" type="text/css" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">        
     </head>
     <body ng-controller="localCTRL">
         <div id="fullscreen_bg" class="fullscreen_bg"></div>
@@ -278,7 +275,7 @@
                   <div class="col-md-6">
                       <label for="estados">Estados</label>
                       <div class="col-xs-18 col-md-12" >            
-                            <select class       ="selectpicker"
+                            <select 
                                     ng-model    ="formData.estado"
                                     ng-options  ="estado.nome for estado in estadoscidades">
                             </select>
@@ -289,13 +286,15 @@
               <br>
               <div class="row">
                     <div class="col-md-6">
-                        <label>Cidade</label> 
-                        <div class="input-group col-xs-18 col-md-12">  
-                            <input type         ="text" 
-                                   class        ="form-control"
-                                   ng-model     ="formData.cidade"
-                                   placeholder  ="...">
-                        </div>
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+    Cidade
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    <li role="presentation" ng-repeat = "estado in estadoscidades"><a role="menuitem" tabindex="-1" >{{estado.sigla}}</a></li>
+  </ul>
+</div>
                     </div>
                     <div class="col-md-6">
                         <label>CEP</label> 
@@ -426,9 +425,5 @@
                 type="text/javascript">                                                                             </script>
         <script src="https://s3-us-west-2.amazonaws.com/ichose/site/management/js/mascaraValidacao.js"
                 type="text/javascript">                                                                             </script>
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/js/bootstrap-select.min.js"
-                type="text/javascript">                                                                             </script>
-
     </body>
 </html>
