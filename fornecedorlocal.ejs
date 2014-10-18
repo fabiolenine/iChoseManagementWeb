@@ -273,18 +273,16 @@
                         </div>
                   </div>
                   <div class="col-md-6">
-                  <div class="dropdown col-xs-18 col-md-12" margin-top: 100px;> 
-                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-                            Dropdown
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu row" role="menu" aria-labelledby="dropdownMenu1" ng-repeat="estado in estadoscidades">
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">{{estado.nome}} - {{estado.sigla}}</a></li>
-                        </ul>
+                      <label>Estado</label>
+                            <select class       ="form-control"  
+                                    ng-model    ="formData.estado"
+                                    ng-repeat   ="estado in estadoscidades">
+                                <option>{{estado.nome}} - {{estado.sigla}}</option>
+                            </select>
                   </div>
                   <!--
 
-                        <label>Estado</label> 
+                         
                         <div class="input-group col-xs-18 col-md-12">  
                             <input type         ="text" 
                                    class        ="form-control"
