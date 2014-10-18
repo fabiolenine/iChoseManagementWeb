@@ -276,15 +276,25 @@
                       <label>Estado</label>
                       <div class="col-xs-18 col-md-12" >            
                         <span  class="nullable">
-                            <select data-style  ="btn-primary" 
-                                    style       ="display: none;"
-                                    ng-model    ="formData.estado" 
+                            <select ng-model    ="formData.estado" 
                                     ng-options  ="estado.nome for estado in estadoscidades">
                               <option value="">-- Escolha o Estado--</option>
                             </select>
                         </span>
                         <br/>
                       </div>
+          
+                      <div class="ui selection dropdown ">
+        <input name="id" type="hidden" value="0"/>
+        <div class="text">-- Pick A Container --</div>	<i class="dropdown icon"></i>	
+        <div class="menu transition hidden">
+            <div class="item active">-- Pick A Container --</div>
+            <div data-value="{{container.id}}" class="item" ng-repeat="container in containers" ng-click="select(container)">
+                {{container.name}}
+            </div>
+        </div>
+    </div>
+                      
                   </div>
               </div>
               <br>
