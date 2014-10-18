@@ -110,7 +110,7 @@
                     <div class="table-responsive"> 
                         <table class="table table-striped">
                         <thead>
-                            <tr>
+                            <tr class="info">
                                 <th><a href="" ng-click="predicate = 'estabelecimento'; reverse=!reverse">Estabelecimento</a></th>
                                 <th><a href="" ng-click="predicate = 'website'; reverse=!reverse">WebSite</a></th>
                                 <th><a href="" ng-click="predicate = 'cidade'; reverse=!reverse">Cidade</a> - 
@@ -133,7 +133,7 @@
                                     </a> | 
                                     <a href     ="#" 
                                        ng-hide  ="local.forauso"
-                                       ng-click ="erase(local._id)">
+                                       ng-click ="erase(local)">
                                         <i class="glyphicon glyphicon-remove"></i>
                                     </a></td>
                             </tr>

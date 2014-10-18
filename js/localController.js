@@ -60,14 +60,14 @@ angular.module('localController',[])
         
         // Erase ==================================================================================
         // delete a event after checking it
-        $scope.erase = function(id) {
-            Locals.erase(id)
+        $scope.erase = function(data) {
+            Locals.erase(data._id)
                 //if successful insert, call our list function to list all the new events
-            .success(function(data) {
-                // var index = $scope.locals.indexOf(local);
+            .success(function(retorno) {
+                var index = $scope.locals.indexOf(data);
                 // $scope.locals.splice(index,1);
                 // usar as duas linhas acima comentadas, no projeto provider.
-                $scope.local.forauso = true;
+                $scope.locals[index].forauso = true;
             });
         };
     });
