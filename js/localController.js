@@ -64,7 +64,10 @@ angular.module('localController',[])
             Locals.erase(id)
                 //if successful insert, call our list function to list all the new events
             .success(function(data) {
-                $scope.locals = data;
+                // var index = $scope.locals.indexOf(local);
+                // $scope.locals.splice(index,1);
+                // usar as duas linhas acima comentadas, no projeto provider.
+                $scope.local.forauso = true;
             });
         };
     });

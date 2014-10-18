@@ -16,7 +16,7 @@ angular.module('localService',[])
         //    return $http.post('/local/update', elemData);
         //},
         erase   : function(id) {
-            return $http.post('/local/erase', + id);
+            return $http.post('/local/erase/' + id);
         }
     }
 });
