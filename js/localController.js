@@ -29,13 +29,16 @@ angular.module('localController',[])
             });
     
         $scope.uf = function(data) {
+            
             console.log(data.nome);
             $scope.status.estado = data.nome;
             $scope.formData.estado = data.nome;
-            $scope.arrayscidades.push(data.cidades);
+            for(i=0; i< data.cidades.length; i++) {
+                $scope.arrayscidades.push(data.cidades[i]);
+            }
             console.log($scope.arraycidades);
         };
-
+    
         $scope.city = function(data) {
             console.log(data);
             $scope.status.cidade = data;
