@@ -274,11 +274,12 @@
                   </div>
                   <div class="col-md-6">
                       <label>Estado</label>
+                      <div class="col-xs-18 col-md-12" ng-repeat   ="estado in estadoscidades">
                             <select class       ="form-control"  
-                                    ng-model    ="formData.estado"
-                                    ng-repeat   ="estado in estadoscidades">
+                                    ng-model    ="formData.estado">
                                 <option>{{estado.nome}} - {{estado.sigla}}</option>
                             </select>
+                          </div>
                   </div>
                   <!--
 
