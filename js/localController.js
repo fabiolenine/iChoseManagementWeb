@@ -6,7 +6,8 @@ angular.module('localController',[])
         $scope.formData = {};
         $scope.predicate = 'estabelecimento';
         $scope.status = {estado: 'escolha o Estado',
-                         cidade: 'escolha a Cidade'};        
+                         cidade: 'escolha a Cidade'};
+        $scope.arrayscidades = [];
         
         // Novo ===================================================================================
         $scope.novo = function(){
@@ -31,6 +32,8 @@ angular.module('localController',[])
             console.log(data.nome);
             $scope.status.estado = data.nome;
             $scope.formData.estado = data.nome;
+            $scope.arrayscidades.push(data.cidades);
+            console.log($scope.arraycidades);
         };
 
         $scope.city = function(data) {
