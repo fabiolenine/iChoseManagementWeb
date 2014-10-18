@@ -273,12 +273,13 @@
                         </div>
                   </div>
                   <br>
-                  <div class="btn-group col-xs-18 col-md-12"> 
-                        <a class="btn btn-default dropdown-toggle btn-select2" data-toggle="dropdown" href="#">Estados 
+                  <div class="dropdown col-xs-18 col-md-12"> 
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                            Dropdown
                             <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu" ng-repeat="estado in estadoscidades | orderBy:predicate:reverse">
-                            <li><a href="#">{{estado.nome}} - {{estado.sigla}}</a></li>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1" ng-repeat="estado in estadoscidades">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">{{estado.nome}} - {{estado.sigla}}</a></li>
                         </ul>
                   </div>
                   <!--
