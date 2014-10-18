@@ -4,7 +4,7 @@ angular.module('providerController',[])
     //inject the Event service factory into our controller
     .controller('providerCTRL', function($scope, $http, Controllers) {
         $scope.formData         = {};
-        $scope.predicate        = 'nomefantansia';
+        $scope.predicate        = 'nomefantasia';
         $scope.status           = { estado     : 'escolha o Estado',
                                     cidade     : 'escolha a Cidade'};
         $scope.arrayscidades    = [];
