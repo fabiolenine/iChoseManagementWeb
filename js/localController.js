@@ -21,6 +21,11 @@ angular.module('localController',[])
                 $scope.locals = data;
             });
         
+        Locals.estadoscidadeslista()
+            .success(function(data) {
+                $scope.estadoscidades = data;
+            });
+    
         // Insert =================================================================================
         // When submitting the add form, send the text to the node API
         $scope.salvar = function() {
@@ -43,20 +48,12 @@ angular.module('localController',[])
                 });
             }
         };
-        
+
+        // Editar =================================================================================
+        // Atualiza os campos com o registro corrente.
         $scope.editar = function(data){
             $scope.formData = data;
         };
-        
-        // Update ==================================================================================
-        // Update a event after checking it
-//        $scope.update = function() {
-//            Events.update($scope.formData)
-//                //if successful insert, call our list function to list all the new events
-//            .success(function(data) {
-//                $scope.locals = data;
-//            });
-//        };
         
         // Erase ==================================================================================
         // delete a event after checking it

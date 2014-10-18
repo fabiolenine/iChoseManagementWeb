@@ -6,16 +6,16 @@ angular.module('localService',[])
 
 .factory('Locals', function($http) {
     return {
-        list    : function() {
+        list                : function() {
             return $http.get('/local/list');
         },
-        salvar  : function(elemData) {
+        estadoscidadeslista : function() {
+            return $http.get('/estadosecidades/list');
+        },
+        salvar              : function(elemData) {
             return $http.post('/local/salvar', elemData);
         },
-        //update  : function(elemData) {
-        //    return $http.post('/local/update', elemData);
-        //},
-        erase   : function(id) {
+        erase               : function(id) {
             return $http.post('/local/erase/' + id);
         }
     }
