@@ -34,9 +34,9 @@ angular.module('localController',[])
         };
 
         $scope.city = function(data) {
-            console.log(data.cidades);
-            $scope.status.cidade = data.cidades;
-            $scope.formData.cidade = data.cidades;
+            console.log(data);
+            $scope.status.cidade = data;
+            $scope.formData.cidade = data;
         };
     
         // Insert =================================================================================
