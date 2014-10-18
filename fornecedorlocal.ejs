@@ -295,7 +295,7 @@
                             <span class="caret"></span>
                           </button>
                           <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                            <li role="presentation" ng-repeat = "cidade in estado.cidades" ng-click="city(cidade)"><a role="menuitem" tabindex="-1">{{cidade}}</a></li>
+                            <li role="presentation" ng-repeat = "cidade in estadoscidades.cidades | filter:status.estado:strict" ng-click="city(cidade)"><a role="menuitem" tabindex="-1">{{cidade.cidades}}</a></li>
                           </ul>
                         </div>
                 </div>
