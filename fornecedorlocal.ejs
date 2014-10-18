@@ -172,12 +172,15 @@
                         value   ="0"
                         ng-model="formData.id">
                 <br>
-                <div class="btn-group col-xs-18 col-md-12"> 
-                    <a class="btn btn-default dropdown-toggle btn-select2" data-toggle="dropdown" href="#">Fornecedor 
+                <label>Fornecedor</label>
+                <div class="dropdown col-xs-18 col-md-12">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                              {{status.fornecedor}}
                         <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu" ng-repeat="provider in providers | orderBy:'descricao'">
-                        <li><a href="#">{{provider.descricao}}</a></li>
+                    </button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                        <li role="presentation" ng-repeat = "fornecedor in providers" ng-click="provider(fornecedor)"><a role="menuitem" tabindex="-1">{{fornecedor.nomefantasia}}</a>
+                        </li>
                     </ul>
                 </div>
                 <br>

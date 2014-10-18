@@ -5,8 +5,9 @@ angular.module('localController',[])
     .controller('localCTRL', function($scope, $http, Locals) {
         $scope.formData = {};
         $scope.predicate = 'estabelecimento';
-        $scope.status = {estado: 'escolha o Estado',
-                         cidade: 'escolha a Cidade'};
+        $scope.status = {estado     : 'escolha o Estado',
+                         cidade     : 'escolha a Cidade',
+                         fornecedor : 'escolha o Fornecedor do Estabelecimento'};
         $scope.arrayscidades = [];
         
         // Novo ===================================================================================
@@ -27,22 +28,29 @@ angular.module('localController',[])
             .success(function(data) {
                 $scope.estadoscidades = data;
             });
+
+        Locals.providerlista()
+            .success(function(data) {
+                $scope.providers = data;
+            });    
     
         $scope.uf = function(data) {
-            
-            console.log(data.nome);
             $scope.status.estado = data.nome;
             $scope.formData.estado = data.nome;
             for(i=0; i< data.cidades.length; i++) {
                 $scope.arrayscidades.push(data.cidades[i]);
             }
-            console.log($scope.arraycidades);
         };
     
         $scope.city = function(data) {
-            console.log(data);
             $scope.status.cidade = data;
             $scope.formData.cidade = data;
+        };
+    
+        $scope.provider = function(data) {
+            console.log(data);
+            $scope.status.fornecedor = data.nomefantasia;
+            $scope.formData.fornecedorid = data._id;
         };
     
         // Insert =================================================================================
@@ -62,8 +70,14 @@ angular.module('localController',[])
                 // if successful creation, call our get function to get all the new events
                 
                 .success(function(data) {
+                    var index = $scope.locals._id.indexOf(data._id); 
+                    if( index >= 0){
+                        $scope.locals[index] = data;
+                    }
+                    else {
+                        $scope.locals.push(data);
+                    }// assign our new list
                     $scope.formData = {}; // clear the form so our user is ready to enter another
-                    $scope.locals.push(data); // assign our new list of events
                 });
             }
         };

@@ -12,6 +12,9 @@ angular.module('localService',[])
         estadoscidadeslista : function() {
             return $http.get('/estadosecidades/list');
         },
+        providerlista : function() {
+            return $http.get('/fornecedor/list');
+        },
         salvar              : function(elemData) {
             return $http.post('/local/salvar', elemData);
         },
