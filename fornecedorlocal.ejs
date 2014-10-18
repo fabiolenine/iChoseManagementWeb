@@ -285,11 +285,11 @@
                     <div class="col-md-6">
 <div class="dropdown">
   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-    Cidade
+      teste: {{status.estados}}
     <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-    <li role="presentation" ng-repeat = "estado in estadoscidades"><a role="menuitem" tabindex="-1" >{{estado.sigla}}</a></li>
+    <li role="presentation" ng-repeat = "estado in estadoscidades"><a role="menuitem" tabindex="-1" ng-click="estado(estado.nome)">{{estado.sigla}}</a></li>
   </ul>
 </div>
                     </div>

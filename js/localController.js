@@ -5,7 +5,8 @@ angular.module('localController',[])
     .controller('localCTRL', function($scope, $http, Locals) {
         $scope.formData = {};
         $scope.predicate = 'estabelecimento';
-        
+        $scope.status = {estado: 'escolha o Estado',
+                        cidade: 'escolha a Cidade'};        
         
         // Novo ===================================================================================
         $scope.novo = function(){
@@ -25,6 +26,11 @@ angular.module('localController',[])
             .success(function(data) {
                 $scope.estadoscidades = data;
             });
+    
+        $scope.estado = function(data) {
+            status.estado = data;
+            formData.estado = data;
+        };
     
         // Insert =================================================================================
         // When submitting the add form, send the text to the node API
