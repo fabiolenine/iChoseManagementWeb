@@ -27,9 +27,10 @@ angular.module('localController',[])
                 $scope.estadoscidades = data;
             });
     
-        $scope.estado = function(data) {
-            status.estado = data;
-            formData.estado = data;
+        $scope.uf = function(data) {
+            console.log(data.nome);
+            $scope.status.estado = data.nome;
+            $scope.formData.estado = data.nome;
         };
     
         // Insert =================================================================================
