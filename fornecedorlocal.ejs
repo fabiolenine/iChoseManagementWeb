@@ -16,6 +16,9 @@
         <link rel="stylesheet" type="text/css" href="https://s3-us-west-2.amazonaws.com/ichose/site/management/css/ichose.css">
         <!-- Page Specific CSS -->
         <link rel="stylesheet" type="text/css" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
+        
+        <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/css/bootstrap-select.min.css">
+        
     </head>
     <body ng-controller="localCTRL">
         <div id="fullscreen_bg" class="fullscreen_bg"></div>
@@ -273,16 +276,12 @@
                         </div>
                   </div>
                   <div class="col-md-6">
-                      <label>Estado</label>
+                      <label for="estados">Estados</label>
                       <div class="col-xs-18 col-md-12" >            
-                        <label for="estados">Estados</label>
-                            <select name        ="estados"
-                                    id          ="estados"
-                                    ng-model    ="formData.estado" 
-                                    data-style  ="btn-primary"
+                            <select class       ="selectpicker"
+                                    ng-model    ="formData.estado"
                                     ng-options  ="estado.nome for estado in estadoscidades">
                             </select>
-                        
                         <br/>
                       </div>
                   </div>
@@ -427,5 +426,9 @@
                 type="text/javascript">                                                                             </script>
         <script src="https://s3-us-west-2.amazonaws.com/ichose/site/management/js/mascaraValidacao.js"
                 type="text/javascript">                                                                             </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/js/bootstrap-select.min.js"
+                type="text/javascript">                                                                             </script>
+
     </body>
 </html>
