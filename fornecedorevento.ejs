@@ -111,7 +111,7 @@
                         <thead>
                             <tr>
                                 <th><a href="" ng-click="predicate = 'evento'; reverse=!reverse">Evento</a></th>
-                                <th><a href="" ng-click="predicate = 'estabelecimento'; reverse=!reverse">Estabelecimento</a></th>
+                                <th><a href="" ng-click="predicate = 'website'; reverse=!reverse">Website</a></th>
                                 <th><a href="" ng-click="predicate = 'cidade'; reverse=!reverse">Cidade</a> - 
                                     <a href="" ng-click="predicate = 'estado'; reverse=!reverse">UF</a></th>
                                 <th><a href="" ng-click="predicate = 'dataevento'; reverse=!reverse">Data do Evento</a></th>
@@ -122,7 +122,7 @@
                         <tbody>
                             <tr ng-repeat="registro in collections | filter:filtro | orderBy:predicate:reverse">
                                 <td>{{registro.evento}}</td>
-                                <td>{{registro.estabelecimento}}</td>
+                                <td>{{registro.website}}</td>
                                 <td>{{registro.cidade}}</td>
                                 <td>{{registro.datatevento}}</td>
                                 <td>{{registro.situacao}}</td>
@@ -254,7 +254,7 @@
           <div class="tab-pane"         id="midias">
                 <br>
                 <label>Website</label>
-                <div class="input-group col-xs-18 col-md-12">
+                <div class="input-group col-xs-18 col-md-12"  autofocus>
                     <input type         ="url" 
                            class        ="form-control" 
                            ng-model     ="formData.website"
@@ -268,7 +268,7 @@
                 </div>
                 <br>
                 <label>Banner</label> 
-                <div class="input-group col-xs-18 col-md-12" autofocus>  
+                <div class="input-group col-xs-18 col-md-12">  
                     <input type         ="url" 
                            class        ="form-control" 
                            ng-model     ="formData.imagembanner" 
@@ -276,16 +276,8 @@
                            autofocus>
                 </div>
                 <br>
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class       ="embed-responsive-item" 
-                            src         ="" 
-                            webkitAllowFullScreen 
-                            mozallowfullscreen 
-                            allowFullScreen</iframe>
-                </div>
-                <br>
                 <label>Video</label> 
-                <div class="input-group col-xs-18 col-md-12" autofocus>  
+                <div class="input-group col-xs-18 col-md-12">  
                     <input type         ="url" 
                            class        ="form-control" 
                            ng-model     ="formData.urlyoutube" 
