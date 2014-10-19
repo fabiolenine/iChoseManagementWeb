@@ -282,8 +282,16 @@
                            autofocus>
                 </div>
                 <br>
-                <div class="embed-responsive embed-responsive-16by9 col-xs-18 col-md-12" ng-show="formData.urlyoutube">
-                    <iframe class="embed-responsive-item" ng-src="{{formData.urlyoutube}}" alt="{{formData.evento}}"></iframe>
+                <div class="embed-responsive embed-responsive-16by9" ng-show="formData.urlyoutube">
+                    <iframe class       ="embed-responsive-item" 
+                            ng-src      ="{{formData.urlyoutube}}" 
+                            alt         ="{{formData.evento}}"
+                            width       ="500" 
+                            height      ="281" 
+                            frameborder ="0" 
+                            webkitAllowFullScreen 
+                            mozallowfullscreen 
+                            allowFullScreen></iframe>
                 </div>
                 <br>
                 <label>Videos</label> 
