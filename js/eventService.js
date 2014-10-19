@@ -4,19 +4,19 @@ angular.module('eventService',[])
 // super simple service
 // each function returns a promise object
 
-.factory('Events', function($http) {
+.factory('Controllers', function($http) {
     return {
-        list    : function() {
+        list                : function() {
             return $http.get('/event/list');
         },
-        insert  : function(elemData) {
-            return $http.post('/event/insert', elemData);
+        estadoscidadeslista : function() {
+            return $http.get('/estadosecidades/list');
         },
-        update  : function(elemData) {
-            return $http.post('/event/update', elemData);
+        salvar              : function(elemData) {
+            return $http.post('/event/salvar', elemData);
         },
-        erase   : function(id) {
-            return $http.post('/event/erase', + id);
+        erase               : function(id) {
+            return $http.post('/event/erase/' + id);
         }
     }
 });
