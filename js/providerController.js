@@ -59,13 +59,15 @@ angular.module('providerController',[])
                 // if successful creation, call our get function to get all the new events
                 
                 .success(function(data) {
-                    var index = $scope.collections._id.indexOf(data._id); 
-                    if( index >= 0){
-                        $scope.collections[index] = data;
-                    }
-                    else {
-                        $scope.collections.push(data);
-                    }// assign our new list
+                    
+                    $scope.pesquisa(data,function(callback){
+                        if(callback == -1){
+                            $scope.collections.push(data);
+                        }
+                        else {
+                            $scope.collections[callback] = data;
+                        }
+                    });
                     $scope.formData = {}; // clear the form so our user is ready to enter another
                 });
             }
@@ -80,6 +82,8 @@ angular.module('providerController',[])
         // Erase ==================================================================================
         // delete a event after checking it
         $scope.erase = function(data) {
+            console.log(data);
+            console.log(data._id);
             Controllers.erase(data._id)
                 //if successful insert, call our list function to list all the new events
             .success(function(retorno) {
@@ -89,4 +93,16 @@ angular.module('providerController',[])
                 $scope.collections[index].forauso = true;
             });
         };
+    
+        $scope.pesquisa = function(data,callback){
+            var index = -1;
+                    
+            for(i = 0; i < $scope.collections.length; i++) {
+                if($scope.collections[i]._id == data._id) {
+                    return i;
+                }
+            }
+            return index;
+        };
+        
     });
