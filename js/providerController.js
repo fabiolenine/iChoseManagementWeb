@@ -20,6 +20,7 @@ angular.module('providerController',[])
         // use the service to get all the events
         Controllers.list()
             .success(function(data) {
+                console.log(data);
                 $scope.collections = data;
             });
         
