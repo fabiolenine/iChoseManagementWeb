@@ -12,6 +12,9 @@ angular.module('eventService',[])
         estadoscidadeslista : function() {
             return $http.get('/estadosecidades/list');
         },
+        locallist           : function() {
+            return $http.get('/local/locallist');
+        },
         salvar              : function(elemData) {
             return $http.post('/event/salvar', elemData);
         },

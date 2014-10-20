@@ -20,7 +20,6 @@ angular.module('providerController',[])
         // use the service to get all the events
         Controllers.list()
             .success(function(data) {
-                console.log(data);
                 $scope.collections = data;
             });
         
@@ -65,6 +64,8 @@ angular.module('providerController',[])
                             $scope.collections.push(data);
                         }
                         else {
+                            console.log('passei por aqui');
+                            console.log(callback);
                             $scope.collections[callback] = data;
                         }
                     });

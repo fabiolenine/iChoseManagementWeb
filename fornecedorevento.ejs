@@ -192,7 +192,7 @@
                 <br>
                 <label>Data do Evento</label>
                 <div class="input-group col-xs-18 col-md-12">
-                    <input type         ="text" 
+                    <input type         ="date" 
                            class        ="form-control" 
                            ng-model     ="formData.dataevento"
                            placeholder  ="Data da realização do evento">
@@ -202,31 +202,33 @@
                     <div class="col-md-6">
                     <label>Abertura</label>
                     <div class="input-group col-xs-18 col-md-12">
-                        <input type         ="text" 
+                        <input type         ="time" 
                                class        ="form-control"
                                ng-model     ="formData.abertura"
-                               placeholder  ="abertura">
+                               placeholder  ="19:00">
                     </div>
                     </div>
                     <div class="col-md-6">
                     <label>Início</label>
                     <div class="input-group col-xs-18 col-md-12">
-                        <input type         ="text" 
+                        <input type         ="time" 
                                class        ="form-control"
                                ng-model     ="formData.inicio"
-                               placeholder  ="inicio">
+                               placeholder  ="20:00">
                     </div>
                     </div>
                 </div>
                 <br>
                 <div class="row">
                     <div class="col-md-6">
-                    <label>Classificação</label>
+                    <label>Classificação (anos)</label>
                     <div class="input-group col-xs-18 col-md-12">
-                    <input type             ="text" 
+                    <input type             ="number" 
                            class            ="form-control"
                            ng-model         ="formData.classificacao"
-                           placeholder      ="digite a inscrição municipal">
+                           min              ="1"
+                           max              ="21"
+                           placeholder      ="18">
                     </div>
                     </div>
                     <div class="col-md-6">
@@ -235,7 +237,7 @@
                     <input type             ="text" 
                            class            ="form-control"
                            ng-model         ="formData.situacao"
-                           placeholder      ="digite a inscrição municipal">
+                           placeholder      ="analise da situação">
                     </div>
                     </div>
                 </div>
@@ -245,7 +247,7 @@
               <label>Descrição</label> 
               <div class="input-group col-xs-18 col-md-12" autofocus>  
                  <textarea class        ="form-control" 
-                           row          ="20"
+                           rows          ="40"
                            ng-model     ="formData.descricao"
                            placeholder  ="Relatar aqui o que irá acontecer no evento e suas atrações" 
                            autofocus></textarea>
@@ -281,7 +283,7 @@
                     <input type         ="url" 
                            class        ="form-control" 
                            ng-model     ="formData.urlyoutube" 
-                           placeholder  ="http://...Vimeo ou youtube, preferencia Vimeo..." 
+                           placeholder  ="//...Vimeo ou youtube, preferencia Vimeo..." 
                            autofocus>
                 </div>
           </div>

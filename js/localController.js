@@ -3,17 +3,17 @@ angular.module('localController',[])
 
     //inject the Event service factory into our controller
     .controller('localCTRL', function($scope, $http, Locals) {
-        $scope.formData = {};
-        $scope.predicate = 'estabelecimento';
-        $scope.status = {estado     : 'escolha o Estado',
-                         cidade     : 'escolha a Cidade',
-                         fornecedor : 'escolha o Fornecedor do Estabelecimento'};
-        $scope.arrayscidades = [];
         
-        // Novo ===================================================================================
-        $scope.novo = function(){
+        $scope.reset = function() {
             $scope.formData = {};
+            $scope.status = {estado     : 'escolha o Estado',
+                             cidade     : 'escolha a Cidade',
+                             fornecedor : 'escolha o Fornecedor do Estabelecimento'};
         };
+        
+        reset();
+        $scope.predicate = 'estabelecimento';
+        $scope.arrayscidades = [];
 
         
         // List ===================================================================================
@@ -77,7 +77,7 @@ angular.module('localController',[])
                     else {
                         $scope.locals.push(data);
                     }// assign our new list
-                    $scope.formData = {}; // clear the form so our user is ready to enter another
+                    reset(); // clear the form so our user is ready to enter another
                 });
             }
         };
@@ -85,6 +85,11 @@ angular.module('localController',[])
         // Editar =================================================================================
         // Atualiza os campos com o registro corrente.
         $scope.editar = function(data){
+            for(i = 0; i < $scope.providers.length; i++) {
+                if($scope.providers[i]._id == data.fornecedorid) {
+                    $scope.status.fornecedor = $scope.providers[i].nomefantasia;
+                }
+            }
             $scope.formData = data;
         };
         
@@ -100,4 +105,5 @@ angular.module('localController',[])
                 $scope.locals[index].forauso = true;
             });
         };
+    
     });

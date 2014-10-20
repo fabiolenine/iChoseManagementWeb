@@ -4,16 +4,10 @@ angular.module('eventController',[])
     //inject the Event service factory into our controller
     .controller('eventCTRL', function($scope, $http, Controllers) {
         $scope.formData         = {};
-        $scope.predicate        = 'nomefantasia';
+        $scope.predicate        = 'evento';
         $scope.status           = { estado     : 'escolha o Estado',
                                     cidade     : 'escolha a Cidade'};
         $scope.arrayscidades    = [];
-        
-        // Novo ===================================================================================
-        $scope.novo = function(){
-            $scope.formData = {};
-        };
-
         
         // List ===================================================================================
         // When landing on the page, get all events and show them
@@ -28,6 +22,13 @@ angular.module('eventController',[])
             .success(function(data) {
                 $scope.estadoscidades = data;
             }); 
+    
+        Controllers.locallist()
+            .success(function(data) {
+                $scope.locais = data;
+            });
+    
+        $scope.
     
         $scope.uf = function(data) {
             $scope.status.estado = data.nome;
