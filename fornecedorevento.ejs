@@ -173,6 +173,20 @@
                 <input  type    ="hidden"
                         value   ="0"
                         ng-model="formData.id">
+                <br>
+                <label>Estabelecimento</label>
+                <div class="dropdown col-xs-18 col-md-12">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                              {{status.estabelecimento}}
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                        <li role="presentation" ng-repeat = "local in locais" ng-click="estebelecimento(local)"><a role="menuitem" tabindex="-1">{{local.estabelecimento}}</a>
+                        </li>
+                    </ul>
+                </div>
+                <br>
+                <br>
                 <label>Estabelecimento</label>
                 <div class="input-group col-xs-18 col-md-12">
                     <input type         ="text" 
@@ -309,7 +323,7 @@
                        placeholder  ="Fora de uso">
             </div><!-- /input-group -->
         </div><!-- /.col-lg-6 -->
-        <button type="button" class="btn btn-warning" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-warning" data-dismiss="modal" ng-click="reset()">Fechar</button>
         <button type="button" class="btn btn-success" data-dismiss="modal" ng-click="insert()" >Salvar</button>
       </div>
     </div>

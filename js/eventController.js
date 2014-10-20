@@ -3,10 +3,17 @@ angular.module('eventController',[])
 
     //inject the Event service factory into our controller
     .controller('eventCTRL', function($scope, $http, Controllers) {
-        $scope.formData         = {};
+        
+        $scope.reset = function() {            
+            $scope.formData         = {};
+            $scope.status           = { estado          : 'escolha o Estado',
+                                       cidade          : 'escolha a Cidade',
+                                       estabelecimento : 'escolha o Local do Evento'};
+        };
+    
+        $scope.reset();
+    
         $scope.predicate        = 'evento';
-        $scope.status           = { estado     : 'escolha o Estado',
-                                    cidade     : 'escolha a Cidade'};
         $scope.arrayscidades    = [];
         
         // List ===================================================================================
@@ -28,8 +35,6 @@ angular.module('eventController',[])
                 $scope.locais = data;
             });
     
-        $scope.
-    
         $scope.uf = function(data) {
             $scope.status.estado = data.nome;
             $scope.formData.estado = data.nome;
@@ -41,6 +46,11 @@ angular.module('eventController',[])
         $scope.city = function(data) {
             $scope.status.cidade = data;
             $scope.formData.cidade = data;
+        };
+        
+        $scope.estebelecimento = function(data) {
+            $scope.status.estabelecimento = data.estabelecimento;
+            $scope.formData.estabelecimentoid = data._id;
         };
     
         // Insert =================================================================================
@@ -69,7 +79,7 @@ angular.module('eventController',[])
                             $scope.collections[callback] = data;
                         }
                     });
-                    $scope.formData = {}; // clear the form so our user is ready to enter another
+                    $scope.reset(); // clear the form so our user is ready to enter another
                 });
             }
         };
@@ -77,6 +87,11 @@ angular.module('eventController',[])
         // Editar =================================================================================
         // Atualiza os campos com o registro corrente.
         $scope.editar = function(data){
+            for(i = 0; i < $scope.locais.length; i++) {
+                if($scope.locais[i]._id == data.estabelecimentoid) {
+                    $scope.status.estabelecimento = $scope.locais[i].nomefantasia;
+                }
+            }
             $scope.formData = data;
         };
         

@@ -11,7 +11,8 @@ angular.module('localController',[])
                              fornecedor : 'escolha o Fornecedor do Estabelecimento'};
         };
         
-        reset();
+        $scope.reset();
+    
         $scope.predicate = 'estabelecimento';
         $scope.arrayscidades = [];
 
@@ -48,7 +49,6 @@ angular.module('localController',[])
         };
     
         $scope.provider = function(data) {
-            console.log(data);
             $scope.status.fornecedor = data.nomefantasia;
             $scope.formData.fornecedorid = data._id;
         };
@@ -77,7 +77,7 @@ angular.module('localController',[])
                     else {
                         $scope.locals.push(data);
                     }// assign our new list
-                    reset(); // clear the form so our user is ready to enter another
+                    $scope.reset(); // clear the form so our user is ready to enter another
                 });
             }
         };
