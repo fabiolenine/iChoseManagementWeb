@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" ng-app="iChoseEvent">
+<html lang="pt-br" ng-app="iChoseProvider">
     <head>
         <meta charset="utf-8">
         <meta name="viewport"     content="width=device-width, initial-scale=1.0">
@@ -7,8 +7,8 @@
         <meta name="keywords"     content="ichose, provider, baladas, eventos, festas, shows, comanda, digital, danceteria, software, balcão"/>
         <meta name="author"       content="Fabio Lenine, Jadson Mezzari, Jesualdo Pinheiro and Lucas Assis."/>
     
-        <title>Provider - Eventos - iChose</title>
-        
+        <title>Provider - Fornecedor - iChose</title>
+         
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="https://s3-us-west-2.amazonaws.com/ichose/site/provider/font-awesome/css/font-awesome.min.css">
@@ -17,7 +17,7 @@
         <!-- Page Specific CSS -->
         <link rel="stylesheet" type="text/css" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
     </head>
-    <body ng-controller="eventCTRL">
+    <body ng-controller="providerCTRL">
         <div id="fullscreen_bg" class="fullscreen_bg"></div>
         <div id="wrapper">
 
@@ -50,8 +50,8 @@
            <li class="dropdown">
               <a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-home"></i> Provider <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                  <li><a href="/fornecedorcadastro">        <i class="glyphicon glyphicon-pencil"></i> Fornecedor</a>   </li>
-                  <li><a href="/fornecedorlocal">           <i class="glyphicon glyphicon-tower"> </i> Local</a>        </li>              
+                  <li><a href="/fornecedorcadastro">        <i class="glyphicon glyphicon-pencil"></i> Fornecedor</a>     </li>
+                  <li><a href="/fornecedorlocal">           <i class="glyphicon glyphicon-tower"> </i> Local</a>        </li> 
                   <li><a href="/fornecedorevento">          <i class="fa fa-beer">                </i> Evento</a>       </li>
                   <li><a href="/fornecedorusuario">         <i class="glyphicon glyphicon-user">  </i> Usuário</a>      </li>
                   <li><a href="/fornecedorconfiguracao">    <i class="glyphicon glyphicon-cog">   </i> Configuração</a> </li>
@@ -83,7 +83,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <ol class="breadcrumb" id="glass">
-                    <li class="active"><i class="fa fa-beer"></i> Eventos</li>
+                    <li class="active"><i class="glyphicon glyphicon-pencil"></i> Fornecedor</li>
                 </ol>
             </div>
         </div>
@@ -100,31 +100,32 @@
                                    placeholder  ="digite aqui para filtrar..." 
                                    ng-model     ="filtro">
                             <div class="input-group-btn">
-                                <button class="btn btn-success" type="button" data-toggle="modal" data-target="#myModal">
+                                <button class       ="btn btn-success" 
+                                        type        ="button" 
+                                        data-toggle ="modal" 
+                                        data-target="#myModal">
                                     <span class="glyphicon glyphicon-plus"></span>
                                     Novo</button>
                             </div><!-- /btn-group -->
                         </div><!-- /input-group -->
                     </div>
                     <div class="table-responsive"> 
-                        <table class="table">
+                        <table class="table table-striped">
                         <thead>
-                            <tr>
-                                <th><a href="" ng-click="predicate = 'evento'; reverse=!reverse">Evento</a></th>
-                                <th><a href="" ng-click="predicate = 'website'; reverse=!reverse">Website</a></th>
+                            <tr class="info">
+                                <th><a href="" ng-click="predicate = 'nomefantasia'; reverse=!reverse">Nome Fantasia</a></th>
+                                <th><a href="" ng-click="predicate = 'email'; reverse=!reverse">Email</a></th>
                                 <th><a href="" ng-click="predicate = 'cidade'; reverse=!reverse">Cidade</a> - 
                                     <a href="" ng-click="predicate = 'estado'; reverse=!reverse">UF</a></th>
-                                <th><a href="" ng-click="predicate = 'dataevento'; reverse=!reverse">Data do Evento</a></th>
                                 <th><a href="" ng-click="predicate = 'situacao'; reverse=!reverse">Situação</a></th>
                                 <th>Opções</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr ng-repeat="registro in collections | filter:filtro | orderBy:predicate:reverse">
-                                <td>{{registro.evento}}</td>
-                                <td>{{registro.website}}</td>
-                                <td>{{registro.cidade}}</td>
-                                <td>{{registro.dataevento}}</td>
+                                <td>{{registro.nomefantasia}}</td>
+                                <td><a ng-href="mailto:{{registro.email}}" title={{registro.nomefantasia}} target="_blank">{{registro.email}}</a></td>
+                                <td>{{registro.cidade}} - {{registro.estado}}</td>
                                 <td>{{registro.situacao}}</td>
                                 <td><a href="#" 
                                        ng-click="editar(registro)" 
@@ -153,16 +154,15 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Informações do Evento</h4>
+        <h4 class="modal-title" id="myModalLabel">Informações do Fornecedor</h4>
       </div>
       <div class="modal-body">
           
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
           <li class="active">   <a href="#principal"    role="tab" data-toggle="tab">Principal</a></li>
-          <li>                  <a href="#descricao"    role="tab" data-toggle="tab" class="btnmap">Descrição</a></li>
-          <li>                  <a href="#midias"       role="tab" data-toggle="tab" class="btnmap">Website, banner e vídeo</a></li>
-          <li>                  <a href="#ingressos"    role="tab" data-toggle="tab" class="btnmap">Ingressos</a></li>
+          <li>                  <a href="#endereco"     role="tab" data-toggle="tab" class="btnmap">Endereço</a></li>
+          <li>                  <a href="#contato"      role="tab" data-toggle="tab" class="btnmap">Contato</a></li>
         </ul>
         
         <form>
@@ -173,68 +173,64 @@
                 <input  type    ="hidden"
                         value   ="0"
                         ng-model="formData.id">
-                <br>
-                <label>Estabelecimento</label>
-                <div class="dropdown col-xs-18 col-md-12">
-                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-                              {{status.estabelecimento}}
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                        <li role="presentation" ng-repeat = "local in locais" ng-click="estebelecimento(local)"><a role="menuitem" tabindex="-1">{{local.estabelecimento}}</a>
-                        </li>
-                    </ul>
-                </div>
-                <br>
-                <br>
-                <label>Evento</label>
+                <label>Razão Social</label> 
                 <div class="input-group col-xs-18 col-md-12" autofocus>  
                     <input type         ="text" 
                            class        ="form-control" 
-                           ng-model     ="formData.evento" 
-                           placeholder  ="Nome do evento para o público" 
+                           ng-model     ="formData.razaosocial" 
+                           placeholder  ="digite conforme documento" 
                            autofocus>
                 </div>
                 <br>
-                <label>Data do Evento</label>
+                <label>Nome de Fantasia</label>
                 <div class="input-group col-xs-18 col-md-12">
-                    <input type         ="date" 
+                    <input type         ="text" 
                            class        ="form-control" 
-                           ng-model     ="formData.dataevento"
-                           placeholder  ="Data da realização do evento">
+                           ng-model     ="formData.nomefantasia"
+                           placeholder  ="digite conforme documento">
+                </div>
+                <br>
+                <label>Nome do Responsável</label>
+                <div class="input-group col-xs-18 col-md-12">
+                    <input type         ="text" 
+                           class        ="form-control"
+                           ng-model     ="formData.nomeresponsavel"
+                           placeholder  ="proprierário, sócio, diretor, gerente...">
                 </div>
                 <br>
                 <div class="row">
                     <div class="col-md-6">
-                    <label>Abertura</label>
+                    <label>CNPJ</label>
                     <div class="input-group col-xs-18 col-md-12">
-                        <input type         ="time" 
+                        <input type         ="text" 
                                class        ="form-control"
-                               ng-model     ="formData.abertura"
-                               placeholder  ="19:00">
+                               ng-model     ="formData.cnpj"
+                               name         ="ncnpj"
+                               placeholder  ="Cadastro Nacional de Pessoa Jurídica"
+                               onKeyPress   ="MascaraCNPJ(ncnpj);" 
+                               maxlength    ="18" 
+                               onBlur       ="ValidarCNPJ(ncnpj);">
                     </div>
                     </div>
                     <div class="col-md-6">
-                    <label>Início</label>
+                    <label>Inscrição Estadual</label>
                     <div class="input-group col-xs-18 col-md-12">
-                        <input type         ="time" 
+                        <input type         ="text" 
                                class        ="form-control"
-                               ng-model     ="formData.inicio"
-                               placeholder  ="20:00">
+                               ng-model     ="formData.inscricaoestadual"
+                               placeholder  ="digite a inscrição estadual">
                     </div>
                     </div>
                 </div>
                 <br>
                 <div class="row">
                     <div class="col-md-6">
-                    <label>Classificação (anos)</label>
+                    <label>Inscrição Municipal</label>
                     <div class="input-group col-xs-18 col-md-12">
-                    <input type             ="number" 
+                    <input type             ="text" 
                            class            ="form-control"
-                           ng-model         ="formData.classificacao"
-                           min              ="1"
-                           max              ="21"
-                           placeholder      ="18">
+                           ng-model         ="formData.inscricaomunicipal"
+                           placeholder      ="digite a inscrição municipal">
                     </div>
                     </div>
                     <div class="col-md-6">
@@ -248,54 +244,144 @@
                     </div>
                 </div>
             </div>
-          <div class="tab-pane"         id="descricao">
+          <div class="tab-pane"         id="endereco">
               <br> 
-              <label>Descrição</label> 
+              <label>Logradouro</label> 
               <div class="input-group col-xs-18 col-md-12" autofocus>  
-                 <textarea class        ="form-control" 
-                           rows          ="40"
-                           ng-model     ="formData.descricao"
-                           placeholder  ="Relatar aqui o que irá acontecer no evento e suas atrações" 
-                           autofocus></textarea>
+                  <input type           ="text" 
+                         class          ="form-control" 
+                         ng-model       ="formData.logradouro"
+                         placeholder    ="rua, avenida, servidão ..." 
+                         autofocus>
+              </div>
+              <br>
+              <label>Complemento</label> 
+              <div class="input-group col-xs-18 col-md-12">  
+                  <input type         ="text" 
+                         class        ="form-control"
+                         ng-model     ="formData.complemento"
+                         placeholder  ="conjunto, condomínio, residencial ...">
+              </div>
+              <br>
+              <div class="row">
+                  <div class="col-md-6">
+                        <label>Bairro</label> 
+                        <div class="input-group col-xs-18 col-md-12">  
+                            <input type         ="text" 
+                                   class        ="form-control"
+                                   ng-model     ="formData.bairro"
+                                   placeholder  ="...">
+                        </div>
+                  </div>
+                  <div class="col-md-6">
+                        <label>Estado</label>
+                        <div class="dropdown col-xs-18 col-md-12">
+                          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                              {{status.estado}}
+                            <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                            <li role="presentation" ng-repeat = "estado in estadoscidades" ng-click="uf(estado)"><a role="menuitem" tabindex="-1">{{estado.nome}}</a></li>
+                          </ul>
+                        </div>
+                  </div>
+              </div>
+              <br>
+              <div class="row">
+                 <div class="col-md-6">
+                        <label>Cidade</label>
+                        <div class="dropdown col-xs-18 col-md-12">
+                          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                              {{status.cidade}}
+                            <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                            <li role="presentation" ng-repeat = "cidade in arrayscidades" ng-click="city(cidade)"><a role="menuitem" tabindex="-1">{{cidade}}</a></li>
+                          </ul>
+                        </div>
+                </div>
+                    <div class="col-md-6">
+                        <label>CEP</label> 
+                        <div class="input-group col-xs-18 col-md-12">  
+                            <input type         ="text" 
+                                   class        ="form-control" 
+                                   name         ="vcep"
+                                   ng-model     ="formData.cep"
+                                   onKeyPress   ="MascaraCep(vcep);"
+                                   maxlength    ="10" 
+                                   onBlur       ="ValidaCep(vcep);">
+                        </div>
+                    </div>
+              </div>
+              <br>
+              <div class="row">
+                <div id="map_canvas"></div>
               </div>
           </div>
-          <div class="tab-pane"         id="midias">
-                <br>
-                <label>Website</label>
-                <div class="input-group col-xs-18 col-md-12"  autofocus>
+          <div class="tab-pane"         id="contato">
+              <br> 
+              <label>Nome de contato</label> 
+              <div class="input-group col-xs-18 col-md-12" autofocus>  
+                  <input type        ="text" 
+                         class       ="form-control"
+                         ng-model    ="formData.nomecontato"
+                         placeholder ="nome do gerente, funcionário ou encarregado..." 
+                         autofocus>
+              </div>
+              <br> 
+              <div class="row">
+                    <div class="col-md-6">
+                        <label>Cargo</label> 
+                        <div class="input-group col-xs-18 col-md-12">  
+                            <input type         ="text" 
+                                   class        ="form-control" 
+                                   ng-model     ="formData.cargo"
+                                   placeholder  ="...">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Setor</label> 
+                        <div class="input-group col-xs-18 col-md-12">  
+                            <input type         ="text" 
+                                   class        ="form-control" 
+                                   ng-model     ="formData.setor"
+                                   placeholder  ="...">
+                        </div>
+                    </div>
+              </div>
+              <br> 
+              <div class="row">
+                    <div class="col-md-6">
+                        <label>email</label>
+                        <div class="input-group col-xs-18 col-md-12">
+                            <input type         ="email" 
+                                   class        ="form-control"
+                                   ng-model     ="formData.email"
+                                   placeholder  ="emaildecontato@empresa.com.br">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Telefone</label>
+                        <div class="input-group col-xs-18 col-md-12">
+                            <input  type         ="text" 
+                                    class        ="form-control" 
+                                    name         ="vtelefone"
+                                    ng-model     ="formData.telefone"
+                                    placeholder  ="telefone para contato..."
+                                    onKeyPress   ="MascaraTelefone(vtelefone);" 
+                                    maxlength    ="16"  
+                                    onBlur       ="ValidaTelefone(vtelefone);">
+                        </div>
+                    </div>
+              </div>
+              <br> 
+                <label>website</label>
+                <div class="input-group col-xs-18 col-md-12">
                     <input type         ="url" 
                            class        ="form-control" 
                            ng-model     ="formData.website"
                            placeholder  ="http://...">
                 </div>
-                <br>
-                <div ng-show="formData.imagembanner" class="col-xs-18 col-md-12">
-                    <a href="#" class="thumbnail">
-                        <img ng-src="{{formData.imagembanner}}" alt="{{formData.evento}}">
-                    </a>
-                </div>
-                <br>
-                <label>Banner</label> 
-                <div class="input-group col-xs-18 col-md-12">  
-                    <input type         ="url" 
-                           class        ="form-control" 
-                           ng-model     ="formData.imagembanner" 
-                           placeholder  ="http://..." 
-                           autofocus>
-                </div>
-                <br>
-                <label>Video</label> 
-                <div class="input-group col-xs-18 col-md-12">  
-                    <input type         ="url" 
-                           class        ="form-control" 
-                           ng-model     ="formData.urlyoutube" 
-                           placeholder  ="//...Vimeo ou youtube, preferencia Vimeo..." 
-                           autofocus>
-                </div>
-          </div>
-          <div class="tab-pane"         id="ingressos">
-              <br> 
-              <label>Genero</label> 
           </div>
         </div>          
         </form>
@@ -315,8 +401,8 @@
                        placeholder  ="Fora de uso">
             </div><!-- /input-group -->
         </div><!-- /.col-lg-6 -->
-        <button type="button" class="btn btn-warning" data-dismiss="modal" ng-click="reset()">Fechar</button>
-        <button type="button" class="btn btn-success" data-dismiss="modal" ng-click="insert()" >Salvar</button>
+        <button type="button" class="btn btn-warning" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal" ng-click="salvar()" >Salvar</button>
       </div>
     </div>
   </div>
@@ -343,13 +429,17 @@
         <script src="https://s3-us-west-2.amazonaws.com/ichose/site/provider/js/tablesorter/tables.js"
                 type="text/javascript">                                                                             </script>
     <!-- Google Maps API Key e Sensor-->
-        <script src="https://s3-us-west-2.amazonaws.com/ichose/site/management/js/eventController.js"
+        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyB3g1x-yuUasJMAZ96tyi18_IUq99h_wRc&sensor=true"
                 type="text/javascript">                                                                             </script>
-        <script src="https://s3-us-west-2.amazonaws.com/ichose/site/management/js/eventCore.js"
+        <script src="https://s3-us-west-2.amazonaws.com/ichose/site/management/js/googlemaps.js"
                 type="text/javascript">                                                                             </script>
-        <script src="https://s3-us-west-2.amazonaws.com/ichose/site/management/js/eventService.js"
+        <script src="https://s3-us-west-2.amazonaws.com/ichose/site/management/js/providerController.js"
+                type="text/javascript">                                                                             </script>
+        <script src="https://s3-us-west-2.amazonaws.com/ichose/site/management/js/providerCore.js"
+                type="text/javascript">                                                                             </script>
+        <script src="https://s3-us-west-2.amazonaws.com/ichose/site/management/js/providerService.js"
                 type="text/javascript">                                                                             </script>
         <script src="https://s3-us-west-2.amazonaws.com/ichose/site/management/js/mascaraValidacao.js"
                 type="text/javascript">                                                                             </script>
-    </body>
+  </body>
 </html>
