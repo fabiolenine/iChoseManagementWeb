@@ -7,7 +7,7 @@
         <meta name="keywords"     content="ichose, provider, baladas, eventos, festas, shows, comanda, digital, danceteria, software, balcão"/>
         <meta name="author"       content="Fabio Lenine, Jadson Mezzari, Jesualdo Pinheiro and Lucas Assis."/>
     
-        <title>Provider - Fornecedor - iChose</title>
+        <title>Provider - Usuários - iChose</title>
          
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
@@ -83,7 +83,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <ol class="breadcrumb" id="glass">
-                    <li class="active"><i class="glyphicon glyphicon-pencil"></i> Fornecedor</li>
+                    <li class="active"><i class="glyphicon glyphicon-pencil"></i> Usuários</li>
                 </ol>
             </div>
         </div>
@@ -113,20 +113,19 @@
                         <table class="table table-striped">
                         <thead>
                             <tr class="info">
-                                <th><a href="" ng-click="predicate = 'nomefantasia'; reverse=!reverse">Nome Fantasia</a></th>
-                                <th><a href="" ng-click="predicate = 'email'; reverse=!reverse">Email</a></th>
-                                <th><a href="" ng-click="predicate = 'cidade'; reverse=!reverse">Cidade</a> - 
-                                    <a href="" ng-click="predicate = 'estado'; reverse=!reverse">UF</a></th>
-                                <th><a href="" ng-click="predicate = 'situacao'; reverse=!reverse">Situação</a></th>
+                                <th><a href="" ng-click="predicate = 'nome'; reverse=!reverse">Nome</a></th>
+                                <th><a href="" ng-click="predicate = 'email'; reverse=!reverse">E-mail</a></th>
+                                <th><a href="" ng-click="predicate = 'cargo'; reverse=!reverse">Cargo</a>
+                                <th><a href="" ng-click="predicate = 'datavalidade'; reverse=!reverse">Data Validade</a></th>
                                 <th>Opções</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr ng-repeat="registro in collections | filter:filtro | orderBy:predicate:reverse">
-                                <td>{{registro.nomefantasia}}</td>
-                                <td><a ng-href="mailto:{{registro.email}}" title={{registro.nomefantasia}} target="_blank">{{registro.email}}</a></td>
-                                <td>{{registro.cidade}} - {{registro.estado}}</td>
-                                <td>{{registro.situacao}}</td>
+                                <td>{{registro.nome}}</td>
+                                <td><a ng-href="mailto:{{registro.email}}" title={{registro.nome}} target="_blank">{{registro.email}}</a></td>
+                                <td>{{registro.cargo}}</td>
+                                <td>{{registro.datavalidade}}</td>
                                 <td><a href="#" 
                                        ng-click="editar(registro)" 
                                        data-toggle="modal" 
@@ -154,16 +153,16 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Informações do Fornecedor</h4>
+        <h4 class="modal-title" id="myModalLabel">Informações do Usuário</h4>
       </div>
       <div class="modal-body">
           
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
           <li class="active">   <a href="#principal"    role="tab" data-toggle="tab">Principal</a></li>
-          <li>                  <a href="#endereco"     role="tab" data-toggle="tab" class="btnmap">Endereço</a></li>
+<!--          <li>                  <a href="#endereco"     role="tab" data-toggle="tab" class="btnmap">Endereço</a></li>
           <li>                  <a href="#contato"      role="tab" data-toggle="tab" class="btnmap">Contato</a></li>
-        </ul>
+-->        </ul>
         
         <form>
         <!-- Tab panes -->
@@ -173,38 +172,38 @@
                 <input  type    ="hidden"
                         value   ="0"
                         ng-model="formData.id">
-                <label>Razão Social</label> 
+                <label>Nome</label> 
                 <div class="input-group col-xs-18 col-md-12" autofocus>  
                     <input type         ="text" 
                            class        ="form-control" 
-                           ng-model     ="formData.razaosocial" 
-                           placeholder  ="digite conforme documento" 
+                           ng-model     ="formData.nome" 
+                           placeholder  ="digite o nome completo sem abreviações..." 
                            autofocus>
                 </div>
                 <br>
-                <label>Nome de Fantasia</label>
+                <label>Cargo</label>
                 <div class="input-group col-xs-18 col-md-12">
                     <input type         ="text" 
                            class        ="form-control" 
-                           ng-model     ="formData.nomefantasia"
-                           placeholder  ="digite conforme documento">
+                           ng-model     ="formData.cargo"
+                           placeholder  ="digite o cargo exercido...">
                 </div>
                 <br>
-                <label>Nome do Responsável</label>
+                <label>E-mail</label>
                 <div class="input-group col-xs-18 col-md-12">
-                    <input type         ="text" 
+                    <input type         ="email" 
                            class        ="form-control"
-                           ng-model     ="formData.nomeresponsavel"
-                           placeholder  ="proprierário, sócio, diretor, gerente...">
+                           ng-model     ="formData.email"
+                           placeholder  ="digite o e-mail para servir de usuário...">
                 </div>
                 <br>
                 <div class="row">
                     <div class="col-md-6">
-                    <label>CNPJ</label>
+                    <label>Senha</label>
                     <div class="input-group col-xs-18 col-md-12">
                         <input type         ="text" 
                                class        ="form-control"
-                               ng-model     ="formData.cnpj"
+                               ng-model     ="formData.password"
                                name         ="ncnpj"
                                placeholder  ="Cadastro Nacional de Pessoa Jurídica"
                                onKeyPress   ="MascaraCNPJ(ncnpj);" 
@@ -213,9 +212,9 @@
                     </div>
                     </div>
                     <div class="col-md-6">
-                    <label>Inscrição Estadual</label>
+                    <label>Data de Validade</label>
                     <div class="input-group col-xs-18 col-md-12">
-                        <input type         ="text" 
+                        <input type         ="date" 
                                class        ="form-control"
                                ng-model     ="formData.inscricaoestadual"
                                placeholder  ="digite a inscrição estadual">
@@ -223,28 +222,8 @@
                     </div>
                 </div>
                 <br>
-                <div class="row">
-                    <div class="col-md-6">
-                    <label>Inscrição Municipal</label>
-                    <div class="input-group col-xs-18 col-md-12">
-                    <input type             ="text" 
-                           class            ="form-control"
-                           ng-model         ="formData.inscricaomunicipal"
-                           placeholder      ="digite a inscrição municipal">
-                    </div>
-                    </div>
-                    <div class="col-md-6">
-                    <label>Situação</label>
-                    <div class="input-group col-xs-18 col-md-12">
-                    <input type             ="text" 
-                           class            ="form-control"
-                           ng-model         ="formData.situacao"
-                           placeholder      ="analise da situação">
-                    </div>
-                    </div>
-                </div>
             </div>
-          <div class="tab-pane"         id="endereco">
+<!--          <div class="tab-pane"         id="endereco">
               <br> 
               <label>Logradouro</label> 
               <div class="input-group col-xs-18 col-md-12" autofocus>  
@@ -383,7 +362,7 @@
                            placeholder  ="http://...">
                 </div>
           </div>
-        </div>          
+-->        </div>          
         </form>
           
       </div>
@@ -433,11 +412,11 @@
                 type="text/javascript">                                                                             </script>
         <script src="https://s3-us-west-2.amazonaws.com/ichose/site/management/js/googlemaps.js"
                 type="text/javascript">                                                                             </script>
-        <script src="https://s3-us-west-2.amazonaws.com/ichose/site/management/js/providerController.js"
+        <script src="https://s3-us-west-2.amazonaws.com/ichose/site/management/js/provideruserController.js"
                 type="text/javascript">                                                                             </script>
-        <script src="https://s3-us-west-2.amazonaws.com/ichose/site/management/js/providerCore.js"
+        <script src="https://s3-us-west-2.amazonaws.com/ichose/site/management/js/provideruserCore.js"
                 type="text/javascript">                                                                             </script>
-        <script src="https://s3-us-west-2.amazonaws.com/ichose/site/management/js/providerService.js"
+        <script src="https://s3-us-west-2.amazonaws.com/ichose/site/management/js/provideruserService.js"
                 type="text/javascript">                                                                             </script>
         <script src="https://s3-us-west-2.amazonaws.com/ichose/site/management/js/mascaraValidacao.js"
                 type="text/javascript">                                                                             </script>
