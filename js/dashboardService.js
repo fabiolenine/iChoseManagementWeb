@@ -6,8 +6,8 @@ angular.module('dashboardService',[])
 
 .factory('DashBoards', function($http) {
     return {
-        list                : function() {
-            return $http.get('/dashboard/userlist');
+        eventcount          : function() {
+            return $http.get('/dashboard/eventcount');
         },
         list                : function() {
             return $http.get('/dashboard/userlist');
