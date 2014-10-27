@@ -201,14 +201,11 @@
                     <div class="col-md-6">
                     <label>Senha</label>
                     <div class="input-group col-xs-18 col-md-12">
-                        <input type         ="text" 
+                        <input type         ="password" 
                                class        ="form-control"
                                ng-model     ="formData.password"
-                               name         ="ncnpj"
-                               placeholder  ="Cadastro Nacional de Pessoa Jurídica"
-                               onKeyPress   ="MascaraCNPJ(ncnpj);" 
-                               maxlength    ="18" 
-                               onBlur       ="ValidarCNPJ(ncnpj);">
+                               placeholder  ="digite a senha" 
+                               minlength    ="5" >
                     </div>
                     </div>
                     <div class="col-md-6">
@@ -217,7 +214,7 @@
                         <input type         ="date" 
                                class        ="form-control"
                                ng-model     ="formData.inscricaoestadual"
-                               placeholder  ="digite a inscrição estadual">
+                               placeholder  ="Expira a senha em...">
                     </div>
                     </div>
                 </div>
