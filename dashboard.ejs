@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" ng-app="iChoseDashboard">
     <head>
         <meta charset="utf-8">
         <meta name="viewport"     content="width=device-width, initial-scale=1.0">
@@ -17,7 +17,7 @@
         <!-- Page Specific CSS -->
         <link rel="stylesheet" type="text/css" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
     </head>
-    <body>
+    <body ng-controller="dashboardCTRL">
         <div id="fullscreen_bg" class="fullscreen_bg"></div>
         <div id="wrapper">
 
@@ -110,11 +110,11 @@
               <div class="panel-heading">
                 <div class="row">
                   <div class="col-xs-6">
-                    <i class="fa fa-comments fa-5x"></i>
+                    <i class="fa fa-share fa-5x"></i>
                   </div>
                   <div class="col-xs-6 text-right">
-                    <p class="announcement-heading">456</p>
-                    <p class="announcement-text">New Mentions!</p>
+                    <p class="announcement-heading">{{formData.emailverao}}</p>
+                    <p class="announcement-text">E-mails verão 2014/2015</p>
                   </div>
                 </div>
               </div>
@@ -122,7 +122,7 @@
                 <div class="panel-footer announcement-bottom">
                   <div class="row">
                     <div class="col-xs-6">
-                      View Mentions
+                      Visualizar e-mails
                     </div>
                     <div class="col-xs-6 text-right">
                       <i class="fa fa-arrow-circle-right"></i>
@@ -137,11 +137,11 @@
               <div class="panel-heading">
                 <div class="row">
                   <div class="col-xs-6">
-                    <i class="fa fa-check fa-5x"></i>
+                    <i class="fa fa-users fa-5x"></i>
                   </div>
                   <div class="col-xs-6 text-right">
-                    <p class="announcement-heading">12</p>
-                    <p class="announcement-text">To-Do Items</p>
+                    <p class="announcement-heading">{{formData.usermobile}}</p>
+                    <p class="announcement-text">Usuários Mobile</p>
                   </div>
                 </div>
               </div>
@@ -149,7 +149,7 @@
                 <div class="panel-footer announcement-bottom">
                   <div class="row">
                     <div class="col-xs-6">
-                      Complete Tasks
+                      Visualizar os usuários
                     </div>
                     <div class="col-xs-6 text-right">
                       <i class="fa fa-arrow-circle-right"></i>
@@ -167,8 +167,8 @@
                     <i class="fa fa-tasks fa-5x"></i>
                   </div>
                   <div class="col-xs-6 text-right">
-                    <p class="announcement-heading">18</p>
-                    <p class="announcement-text">Crawl Errors</p>
+                    <p class="announcement-heading">{{formData.sacs}}</p>
+                    <p class="announcement-text">Suporte em Aberto</p>
                   </div>
                 </div>
               </div>
@@ -176,7 +176,7 @@
                 <div class="panel-footer announcement-bottom">
                   <div class="row">
                     <div class="col-xs-6">
-                      Fix Issues
+                      Visualizar as solicitações de suporte
                     </div>
                     <div class="col-xs-6 text-right">
                       <i class="fa fa-arrow-circle-right"></i>
@@ -194,8 +194,8 @@
                     <i class="fa fa-comments fa-5x"></i>
                   </div>
                   <div class="col-xs-6 text-right">
-                    <p class="announcement-heading">56</p>
-                    <p class="announcement-text">New Orders!</p>
+                    <p class="announcement-heading">{{formData.events}}</p>
+                    <p class="announcement-text">Eventos</p>
                   </div>
                 </div>
               </div>
@@ -203,7 +203,7 @@
                 <div class="panel-footer announcement-bottom">
                   <div class="row">
                     <div class="col-xs-6">
-                      Complete Orders
+                      Visualizar os Eventos
                     </div>
                     <div class="col-xs-6 text-right">
                       <i class="fa fa-arrow-circle-right"></i>
@@ -219,7 +219,7 @@
           <div class="col-lg-12">
             <div class="panel panel-primary">
               <div class="panel-heading">
-                <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Traffic Statistics: October 1, 2013 - October 31, 2013</h3>
+                <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Transações realizadas: Outubro 1, 2014 - Outubro 31, 2014</h3>
               </div>
               <div class="panel-body">
                 <div id="morris-chart-area"></div>
@@ -232,12 +232,12 @@
           <div class="col-lg-4">
             <div class="panel panel-primary">
               <div class="panel-heading">
-                <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Traffic Sources: October 1, 2013 - October 31, 2013</h3>
+                <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Transações por Origem: Outubro 1, 2014 - Outubro 31, 2014</h3>
               </div>
               <div class="panel-body">
                 <div id="morris-chart-donut"></div>
                 <div class="text-right">
-                  <a href="#">View Details <i class="fa fa-arrow-circle-right"></i></a>
+                  <a href="#">Visualizar Detalhes <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
               </div>
             </div>
@@ -245,45 +245,45 @@
           <div class="col-lg-4">
             <div class="panel panel-primary">
               <div class="panel-heading">
-                <h3 class="panel-title"><i class="fa fa-clock-o"></i> Recent Activity</h3>
+                <h3 class="panel-title"><i class="fa fa-clock-o"></i> Atividades Recentes</h3>
               </div>
               <div class="panel-body">
                 <div class="list-group">
                   <a href="#" class="list-group-item">
-                    <span class="badge">just now</span>
-                    <i class="fa fa-calendar"></i> Calendar updated
+                    <span class="badge">agora</span>
+                    <i class="fa fa-calendar"></i> Calendário Atualizado
                   </a>
                   <a href="#" class="list-group-item">
-                    <span class="badge">4 minutes ago</span>
-                    <i class="fa fa-comment"></i> Commented on a post
+                    <span class="badge">há 4 minutos</span>
+                    <i class="fa fa-comment"></i> Comentou em um post
                   </a>
                   <a href="#" class="list-group-item">
-                    <span class="badge">23 minutes ago</span>
-                    <i class="fa fa-truck"></i> Order 392 shipped
+                    <span class="badge">há 23 minutos</span>
+                    <i class="fa fa-truck"></i> Ordem 392 enviada
                   </a>
                   <a href="#" class="list-group-item">
-                    <span class="badge">46 minutes ago</span>
-                    <i class="fa fa-money"></i> Invoice 653 has been paid
+                    <span class="badge">há 46 minutos</span>
+                    <i class="fa fa-money"></i> Fatura 653 foi paga
                   </a>
                   <a href="#" class="list-group-item">
-                    <span class="badge">1 hour ago</span>
-                    <i class="fa fa-user"></i> A new user has been added
+                    <span class="badge">há 1 hora</span>
+                    <i class="fa fa-user"></i> Um novo usuário foi adicionado
                   </a>
                   <a href="#" class="list-group-item">
-                    <span class="badge">2 hours ago</span>
-                    <i class="fa fa-check"></i> Completed task: "pick up dry cleaning"
+                    <span class="badge">há 2 horas</span>
+                    <i class="fa fa-check"></i> Tarefa concluida: "scrape blueticket"
                   </a>
                   <a href="#" class="list-group-item">
-                    <span class="badge">yesterday</span>
-                    <i class="fa fa-globe"></i> Saved the world
+                    <span class="badge">ontem</span>
+                    <i class="fa fa-globe"></i> Cadastrou fornecedor
                   </a>
                   <a href="#" class="list-group-item">
-                    <span class="badge">two days ago</span>
+                    <span class="badge">há 2 dias</span>
                     <i class="fa fa-check"></i> Completed task: "fix error on sales page"
                   </a>
                 </div>
                 <div class="text-right">
-                  <a href="#">View All Activity <i class="fa fa-arrow-circle-right"></i></a>
+                  <a href="#">Visualizar Todas Atividades <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
               </div>
             </div>
@@ -291,73 +291,73 @@
           <div class="col-lg-4">
             <div class="panel panel-primary">
               <div class="panel-heading">
-                <h3 class="panel-title"><i class="fa fa-money"></i> Recent Transactions</h3>
+                <h3 class="panel-title"><i class="fa fa-money"></i> Recentes Transações</h3>
               </div>
               <div class="panel-body">
                 <div class="table-responsive">
                   <table class="table table-bordered table-hover table-striped tablesorter">
                     <thead>
                       <tr>
-                        <th>Order # <i class="fa fa-sort"></i></th>
-                        <th>Order Date <i class="fa fa-sort"></i></th>
-                        <th>Order Time <i class="fa fa-sort"></i></th>
-                        <th>Amount (USD) <i class="fa fa-sort"></i></th>
+                        <th>Sequencia <i class="fa fa-sort"></i></th>
+                        <th>Data <i class="fa fa-sort"></i></th>
+                        <th>Hora <i class="fa fa-sort"></i></th>
+                        <th>Valor (BRL) <i class="fa fa-sort"></i></th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <td>3326</td>
-                        <td>10/21/2013</td>
+                        <td>10/21/2014</td>
                         <td>3:29 PM</td>
-                        <td>$321.33</td>
+                        <td>$321,33</td>
                       </tr>
                       <tr>
                         <td>3325</td>
-                        <td>10/21/2013</td>
+                        <td>10/21/2014</td>
                         <td>3:20 PM</td>
-                        <td>$234.34</td>
+                        <td>$234,34</td>
                       </tr>
                       <tr>
                         <td>3324</td>
-                        <td>10/21/2013</td>
+                        <td>10/21/2014</td>
                         <td>3:03 PM</td>
-                        <td>$724.17</td>
+                        <td>$724,17</td>
                       </tr>
                       <tr>
                         <td>3323</td>
-                        <td>10/21/2013</td>
+                        <td>10/21/2014</td>
                         <td>3:00 PM</td>
-                        <td>$23.71</td>
+                        <td>$23,71</td>
                       </tr>
                       <tr>
                         <td>3322</td>
-                        <td>10/21/2013</td>
+                        <td>10/21/2014</td>
                         <td>2:49 PM</td>
-                        <td>$8345.23</td>
+                        <td>$8345,23</td>
                       </tr>
                       <tr>
                         <td>3321</td>
-                        <td>10/21/2013</td>
+                        <td>10/21/2014</td>
                         <td>2:23 PM</td>
-                        <td>$245.12</td>
+                        <td>$245,12</td>
                       </tr>
                       <tr>
                         <td>3320</td>
-                        <td>10/21/2013</td>
+                        <td>10/21/2014</td>
                         <td>2:15 PM</td>
-                        <td>$5663.54</td>
+                        <td>$5663,54</td>
                       </tr>
                       <tr>
                         <td>3319</td>
-                        <td>10/21/2013</td>
+                        <td>10/21/2014</td>
                         <td>2:13 PM</td>
-                        <td>$943.45</td>
+                        <td>$943,45</td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
                 <div class="text-right">
-                  <a href="#">View All Transactions <i class="fa fa-arrow-circle-right"></i></a>
+                  <a href="#">Visualizar Todas Transações <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
               </div>
             </div>
@@ -380,6 +380,13 @@
         <script src="https://s3-us-west-2.amazonaws.com/ichose/site/provider/js/morris/chart-data-morris.js">       </script>
         <script src="https://s3-us-west-2.amazonaws.com/ichose/site/provider/js/tablesorter/jquery.tablesorter.js"> </script>
         <script src="https://s3-us-west-2.amazonaws.com/ichose/site/provider/js/tablesorter/tables.js">             </script>
+        
+        <script src="https://s3-us-west-2.amazonaws.com/ichose/site/management/js/dashboardController.js"
+                type="text/javascript">                                                                             </script>
+        <script src="https://s3-us-west-2.amazonaws.com/ichose/site/management/js/dashboardCore.js"
+                type="text/javascript">                                                                             </script>
+        <script src="https://s3-us-west-2.amazonaws.com/ichose/site/management/js/dashboardService.js"
+                type="text/javascript">                                                                             </script>
 
   </body>
 </html>
