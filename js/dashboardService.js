@@ -9,11 +9,14 @@ angular.module('dashboardService',[])
         eventcount          : function() {
             return $http.get('/dashboard/eventcount');
         },
-        list                : function() {
-            return $http.get('/dashboard/userlist');
+        saccount            : function() {
+            return $http.get('/dashboard/saccount');
         },
-        list                : function() {
-            return $http.get('/dashboard/userlist');
+        usermobilecount     : function() {
+            return $http.get('/dashboard/usermobilecount');
+        },
+        emailveraocount     : function() {
+            return $http.get('/dashboard/emailveraocount');
         }
     }
 });
